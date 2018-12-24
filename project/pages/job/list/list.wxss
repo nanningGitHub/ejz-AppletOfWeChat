@@ -1,0 +1,220 @@
+page {
+  background: #f2f2f2;
+  height: 100%;
+}
+
+.container {
+  border-top: 1rpx solid #eee;
+  background: #fff;
+}
+
+.select-content {
+  position: relative;
+  padding: 0 70rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.select-content li {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-family: PingFangSC;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.select-content li span {
+  margin-left: 10rpx;
+  display: inline-block;
+  vertical-align: middle;
+  border-top: 10rpx solid #333;
+  border-left: 6rpx solid transparent;
+  border-right: 6rpx solid transparent;
+  transition: 0.3s linear;
+}
+
+.select-content .select {
+  color: #37d3cb;
+}
+
+.select {
+  color: #37d3cb;
+}
+
+.select-content .select span {
+  border-top: 10rpx solid #37d3cb;
+  border-left: 6rpx solid transparent;
+  border-right: 6rpx solid transparent;
+  transform: rotate(180deg);
+  transition: 0.3s linear;
+}
+
+.job {
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 99;
+}
+
+.job .all-job {
+  width: 238rpx;
+  height: 468rpx;
+  background: #fff;
+  overflow-y: scroll;
+  background-color: #f6f6f6;
+  box-sizing: border-box;
+  padding-left: 68rpx;
+}
+
+.job .all-job li {
+  height: 68rpx;
+  line-height: 68rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.job .all-job li.select {
+  color: #37d3cb;
+}
+
+.job .detail {
+  width: 512rpx;
+  background: #fff;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  padding-left: 230rpx;
+}
+
+.job .detail li {
+  height: 68rpx;
+  line-height: 68rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.job .detail li.select {
+  color: #37d3cb;
+}
+
+.sort {
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 99;
+}
+
+.sort ul {
+  width: 100%;
+  height: 466rpx;
+  background: #fff;
+  text-align: center;
+}
+
+.sort ul li {
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.filter {
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  padding-top: 42rpx;
+  padding: 0 70rpx;
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+.filter h3 {
+  font-size: 24rpx;
+  color: #333;
+  font-family: PingFangSC;
+}
+
+.filter ul {
+  display: block;
+  width: 100%;
+}
+
+.filter ul li {
+  margin-top: 26rpx;
+  display: inline-block;
+  width: 25%;
+  font-size: 22rpx;
+  text-align: center;
+  color: #666;
+}
+
+.filter ul li a {
+  display: inline-block;
+  width: 126rpx;
+  height: 44rpx;
+  position: relative;
+}
+
+.filter ul li a.select {
+  color: #37d3cb;
+}
+
+.filter ul li a.select span {
+  display: block !important;
+}
+
+.filter .radio-group {
+  margin-top: 24rpx;
+}
+
+.filter .radio-group .radio {
+  font-size: 22rpx;
+  color: #666;
+}
+
+.filter .btn {
+  position: absolute;
+  left: 0;
+  box-sizing: border-box;
+  padding-top: 42rpx;
+  /* bottom: -240rpx; */
+  width: 100%;
+  display: flex;
+  background-color: white;
+}
+
+.filter .btn a {
+  width: 50%;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+}
+
+.filter a span {
+  position: absolute;
+  top: -5rpx;
+  right: 0;
+  border-top: 25rpx solid #37d3cb;
+  border-left: 25rpx solid transparent;
+}
+.filter .btn .reset {
+  color: #fff;
+  background: #d1cfcf;
+}
+.filter .btn .confirm {
+  color: #fff;
+  background: #37d3cb;
+}

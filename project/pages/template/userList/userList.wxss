@@ -1,0 +1,19 @@
+.user-list {
+  padding: 0 30rpx;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 88rpx;
+  border-bottom: 1px solid #dbedff;
+}
+
+.list-name {
+  font-size: 28rpx;
+}
+
+.icon-arrow image {
+  width: 14rpx;
+  height: 36rpx;
+}

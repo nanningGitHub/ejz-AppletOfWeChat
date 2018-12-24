@@ -1,0 +1,60 @@
+@import "/app.wxss";
+/* components/jobItem/jobItem.wxss */
+.item {
+  padding: 0 38rpx 0 12rpx; 
+  height: 158rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+.logo {
+  margin-right: 20rpx;
+  width: 120rpx;
+  height: 96rpx;
+  border-radius: 50%;
+}
+.title {
+  line-height: 42rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+.tip {
+  max-width: 260rpx;
+  height: 28rpx;
+  overflow: hidden;
+  line-height: 28rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 22rpx;
+  color: #888;
+}
+.icon-address {
+  margin-left: 1rpx;
+  margin-right: 14rpx;
+  width: 15rpx;
+  height: 22rpx;
+}
+.icon-time {
+  margin-right: 12rpx;
+  width: 18rpx;
+  height: 18rpx;
+}
+.price {
+  margin-right: 10rpx;
+  font-size: 40rpx;
+  color: #37d3cb;
+}
+.date {
+  font-size: 22rpx;
+  color: #37d3cb;
+}
+.methods {
+  float: right;
+  margin-top: 10rpx;
+  padding: 0 12rpx;
+  background: #eee;
+  border-radius: 30rpx;
+  line-height: 30rpx;
+  font-size: 20rpx;
+  color: #888;
+  text-align: center;
+}

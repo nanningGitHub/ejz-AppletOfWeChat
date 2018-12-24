@@ -1,0 +1,5 @@
+<template name="alert">
+  <view class="alert">
+    <text>很好的</text>
+  </view>
+</template>

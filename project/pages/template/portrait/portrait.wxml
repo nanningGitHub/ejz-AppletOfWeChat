@@ -1,0 +1,7 @@
+<template name="portrait">
+  <view class="out">
+    <view class="in">
+      <image src="{{url}}"></image>
+    </view>
+  </view>
+</template>

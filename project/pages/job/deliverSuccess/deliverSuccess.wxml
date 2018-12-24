@@ -1,0 +1,12 @@
+<view class="margin-wrap">
+  <view class="wrap">
+    <view class="success">
+      <view class="success-icon">
+        <image src="../../../images/success.png"></image>
+      </view>
+      <view class="success-button button-back">
+        <button bindtap="back">返回</button>
+      </view>
+    </view>
+  </view>
+</view>

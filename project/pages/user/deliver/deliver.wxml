@@ -1,0 +1,9 @@
+<view>
+  <view class='nav flex-start'>
+    <text>全部</text>
+    <text>待录用</text>
+    <text>待上岗</text>
+    <text>待结算</text>
+    <text>已结算</text>
+  </view>
+</view>

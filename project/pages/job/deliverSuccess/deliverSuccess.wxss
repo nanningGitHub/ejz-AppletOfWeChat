@@ -1,0 +1,38 @@
+.success {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 38rpx;
+}
+.success-icon {
+    margin-top: 90rpx;
+}
+.success-icon image {
+    width: 180rpx;
+    height: 180rpx;
+}
+.success text {
+    margin-top: 50rpx;
+    line-height: 28rpx;
+    font-size: 28rpx;
+}
+.success button {
+    position: static;
+    width: 600rpx;
+    height: 88rpx;
+    font-size: 32rpx;
+    color:#37d3cb;
+    background-color: #ffffff;
+    border: 1px solid #37d3cb;
+    border-radius: 60rpx;
+}
+.success button::after {
+    content: none;
+}
+.button-go {
+    margin-top: 110rpx;
+}
+.button-back {
+    margin-top: 26rpx;
+}

@@ -1,0 +1,28 @@
+<import src="../../template/jobList/jobList.wxml" />
+<view class="shake-area">
+  <view class="center">
+    <view class="controll-portrait" bindtap="toggleList">
+      <image src="{{portrait}}"></image>
+    </view>
+    <view wx:if="{{isListShow}}" class="center-list-area">
+      <view class="center-list">
+        <text bindtap="checkResume">个人资料</text>
+      </view>
+      <view class="center-list">
+        <navigator url="../../userCenter/myJob/myJob">我的兼职</navigator>
+      </view>
+      <view class="center-list">
+        <navigator url="../../userCenter/feedback/feedback">意见反馈</navigator>
+      </view>
+    </view>
+  </view>
+  <view class="shake">
+    <image src="../../../images/shake.png"></image>
+  </view>
+  <view class="shake-info">
+    <text>摇一摇</text>
+  </view>
+</view>
+<view class="margin-wrap" bindtap="toJobDetail" wx:if="{{finded}}">
+  <template is="jobList" data="{{...item}}" />
+</view>

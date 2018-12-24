@@ -1,0 +1,77 @@
+@import "../../template/jobList/jobList.wxss";
+
+.shake-area {
+  position: relative;
+  margin-top: 16rpx;
+  height: 800rpx;
+}
+
+.center {
+  position: absolute;
+  top: 24rpx;
+  left: 34rpx;
+}
+
+.center image {
+  width: 236rpx;
+  height: 110rpx;
+}
+
+.controll-portrait {
+  position: absolute;
+  border: 4rpx solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.controll-portrait image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.center-list-area {
+  position: absolute;
+  top: 40rpx;
+  left: 40rpx;
+  width: 212rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  box-shadow: 0px 2px 8px #daedff;
+  z-index: 1;
+  transition: all ease-in-out 120s;
+}
+
+.center-list {
+  height: 70rpx;
+  border-bottom: 1px solid #dbedff;
+}
+
+.center-list navigator,
+.center-list text {
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+}
+
+.shake {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -154rpx;
+  margin-left: -220rpx;
+}
+
+.shake image {
+  width: 440rpx;
+  height: 308rpx;
+}
+
+.shake-info {
+  position: absolute;
+  top: 50%;
+  margin-top: 174rpx;
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+}

@@ -1,0 +1,45 @@
+<view>
+  <view class="title flex-start align-center">
+    <view class='portrait'>
+      <image src="{{user.headerUrl || '/images/portrait.png'}}" />
+    </view>
+    <view>
+      <text class='name'>{{user.userName}}</text>
+      <text class="remaining {{token?'display_b':''}}">{{user.wallet}} <text>元</text></text>
+      <view class='wallet_box' bindtap='Withdraw'>
+        <text class="wallet {{token?'display_b':''}}">钱包提现</text>
+        <image class="wallet_arrow {{token?'display_b':''}}" src='/images/arrow_3.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class="wrap resume flex-between" bindtap='myResume'>
+    <view class="resume-content">
+      <h3>我的简历</h3>
+      <p>完善简历能提升您的录取率哦！</p>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+      <navigator url="{{user.resumedataNum && '/pages/user/resume/resume' || '/pages/user/editResume/editResume'}}">{{user.resumedataNum && '立即完善' || '填写简历'}}</navigator>
+=======
+      <!-- <navigator url="{{user.resumedataNum && '/pages/user/resume/resume' || '/pages/user/editResume/editResume'}}">{{user.resumedataNum && '立即完善' || '填写简历'}}</navigator> -->
+      <view class='nResume'>{{user.resumedataNum && '立即完善' || '填写简历'}}</view>
+>>>>>>> Stashed changes
+=======
+      <!-- <navigator url="{{user.resumedataNum && '/pages/user/resume/resume' || '/pages/user/editResume/editResume'}}">{{user.resumedataNum && '立即完善' || '填写简历'}}</navigator> -->
+      <view class='nResume' bindtap='myResume'>{{user.resumedataNum && '立即完善' || '填写简历'}}</view>
+>>>>>>> parent of cbf0755... 补充提交
+    </view>
+    <view class='progress'>
+      <view class='progress-out' style=' position: relative;'>
+        <view class='progress-in'>
+          <text>{{user.resumedataNum && user.resumedataNum || 0}}%</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="wrap delivery" bindtap='myJob'>
+    <view class='flex-between align-center'>
+      <text>我的投递</text>
+      <image class='arrow' src='/images/arrow_3.png' />
+    </view>
+  </view>
+</view>

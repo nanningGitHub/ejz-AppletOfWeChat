@@ -1,0 +1,101 @@
+<view class='resume'>
+  <view class='base-info flex-start align-center'>
+    <view class='tmp-title base-title flex-between align-center'>
+      <text class='title'>基本信息</text>
+      <!-- <navigator url='../editResume/baseInfo' class='edit flex-start align-center' wx:if="{{resume.realName}}">
+        <text>编辑</text>
+        <image src="/images/arrow_3.png" />
+      </navigator> -->
+    </view>
+    <view wx:if="{{resume.realName}}" class='base-item flex-start'>
+      <view class='portrait'>
+        <image src="{{resume.headerFile}}" />
+      </view>
+      <view>
+        <text class='username'>{{resume.realName}}</text>
+        <view class='tag-list flex-start align-center'>
+          <text wx:if="{{resume.gender}}">{{gender[resume.gender]}}</text>
+          <text wx:if="{{resume.age}}">{{resume.age}}岁</text>
+          <text>{{resume.degree}}</text>
+        </view>
+        <text class='tip'>{{resume.intro}}</text>
+      </view>
+    </view>
+    <!-- <navigator url='../editResume/baseInfo' class='to-edit' wx:else>
+      <image src='/images/add.png' />
+      <text>点击添加基本信息</text>
+    </navigator> -->
+  </view>
+  <view class='other-info wrap margin-wrap'>
+    <view class='tmp-title other-title flex-between align-center'>
+      <text class='title'>求职偏好</text>
+      <!-- <navigator class='edit flex-start align-center' wx:if="{{resume.jobtypeids}}">
+        <text>编辑</text>
+        <image src="/images/arrow_3.png" />
+      </navigator> -->
+    </view>
+    <view class='item' wx:if="{{resume.jobtypeids}}">
+      <text>期望职位:</text>
+    </view>
+    <!-- <navigator class='to-edit' wx:else>
+      <image src='/images/add.png' />
+      <text>点击添加期望职位、工作区域等信息</text>
+    </navigator> -->
+  </view>
+  <view class='other-info wrap margin-wrap'>
+    <view class='tmp-title other-title flex-between align-center'>
+      <text class='title'>教育经历</text>
+      <!-- <navigator class='edit flex-start align-center' wx:if="{{resume.school}}">
+        <text>编辑</text>
+        <image src="/images/arrow_3.png" />
+      </navigator> -->
+    </view>
+    <view class='item' wx:if="{{resume.school}}">
+      <text>学校名称：{{resume.school}}</text>
+      <text>入学年份：{{resume.startSchool}}年</text>
+      <text>所学专业：{{resume.profession}}</text>
+    </view>
+    <!-- <navigator class='to-edit' wx:else>
+      <image src='/images/add.png' />
+      <text>点击添加教育经历、毕业院校等信息</text>
+    </navigator> -->
+  </view>
+  <view class='other-info wrap margin-wrap'>
+    <view class='tmp-title other-title flex-between align-center'>
+      <text class='title'>工作经历</text>
+      <!-- <navigator class='edit flex-start align-center' wx:if="{{resume.experience}}">
+        <text>编辑</text>
+        <image src="/images/arrow_3.png" />
+      </navigator> -->
+    </view>
+    <view class='item' wx:if="{{resume.experience}}">
+      <text>工作经验：{{resume.experience}}</text>
+    </view>
+    <!-- <navigator class='to-edit' wx:else>
+      <image src='/images/add.png' />
+      <text>点击添加工作时间、工作经验等信息</text>
+    </navigator> -->
+  </view>
+    <view class='other-info wrap margin-wrap'>
+    <view class='tmp-title other-title flex-between align-center'>
+      <text class='title'>详细信息</text>
+      <!-- <navigator class='edit flex-start align-center' wx:if="{{resume.height || resume.weight || resume.wechat || resume.qq || resume.email}}">
+        <text>编辑</text>
+        <image src="/images/arrow_3.png" />
+      </navigator> -->
+    </view>
+    <view class='item' wx:if="{{resume.height || resume.weight || resume.wechat || resume.qq || resume.email}}">
+      <text>身高：{{resume.height}} cm</text>
+      <text>体重：{{resume.weight}} kg</text>
+      <text>地址：{{resume.experience}}</text>
+      <text>微信：{{resume.wechat}}</text>
+      <text>QQ：{{resume.qq}}</text>
+      <text>邮箱：{{resume.email}}</text>
+    </view>
+    <!-- <navigator class='to-edit' wx:else>
+      <image src='/images/add.png' />
+      <text>点击添加联系方式、微信、邮箱等信息</text>
+    </navigator> -->
+  </view>
+</view>
+<navigator class='to-edit' url='../editResume/editResume'>编辑简历</navigator>

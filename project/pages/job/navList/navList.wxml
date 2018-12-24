@@ -1,0 +1,6 @@
+<!--pages/job/navList/navList.wxml-->
+<view class='wrap margin-wrap job-list'>
+  <view wx:for="{{jobList}}" wx:key="{{item.id}}" data-item='{{item}}' bindtap="toJobDetail">
+    <job-item item="{{item}}"></job-item>
+  </view>
+</view>

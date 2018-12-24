@@ -1,0 +1,58 @@
+@import "../portrait/portrait.wxss";
+@import "../resumeTitle/resumeTitle.wxss";
+
+.basic-area {
+  padding: 28rpx 0 26rpx 18rpx;
+}
+
+.basic-portrait {
+  margin-right: 30rpx;
+}
+
+.basic-name {
+  line-height: 48rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.basic-content {
+  margin-top: 20rpx;
+  width: 256rpx;
+  line-height: 22rpx;
+  font-size: 22rpx;
+}
+
+.life-photo-area {
+  padding: 0 3rpx;
+}
+
+.life-photo-area image {
+  margin: 0 5rpx 10rpx 5rpx;
+  width: 166rpx;
+  height: 166rpx;
+  border-radius: 8rpx;
+}
+
+.user-content {
+  padding: 16rpx 40rpx 16rpx;
+  border-bottom: 1px solid #dbedff;
+}
+
+.user-content {
+  line-height: 56rpx;
+  font-size: 28rpx;
+}
+
+.user-content-title {
+  color: #bbb;
+}
+
+.job-intent {
+  margin-right: 16rpx;
+  padding: 0 10rpx;
+  line-height: 42rpx;
+  font-size: 24rpx;
+  color: #37d3cb;
+  border: 1px solid #37d3cb;
+  border-radius: 30rpx;
+}

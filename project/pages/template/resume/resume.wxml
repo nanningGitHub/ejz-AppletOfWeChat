@@ -1,0 +1,122 @@
+<import src="../portrait/portrait.wxml" />
+<import src="../resumeTitle/resumeTitle.wxml" />
+<template name="resume">
+  <view class="margin-wrap">
+    <view class="padding-wrap">
+      <view class="wrap">
+        <view class="flex-start basic-area">
+          <view class="basic-portrait">
+            <template is="portrait" data="{{url:userResume.headerFile}}" />
+          </view>
+          <view>
+            <text class="basic-name">{{userResume.realName}}</text>
+            <view class="flex-start">
+              <view class="flex-start basic-content">
+                <text>性别：</text>
+                <text class="main-info">{{userResume.gender ? '男' : '女'}}</text>
+              </view>
+              <view class="flex-start basic-content">
+                <text>身高：</text>
+                <text class="main-info">{{userResume.height}}</text>
+              </view>
+            </view>
+            <view class="flex-start">
+              <view class="flex-start basic-content">
+                <text>年龄：</text>
+                <text class="main-info">{{userResume.age}}</text>
+              </view>
+              <view class="flex-start basic-content">
+                <text>体重：</text>
+                <text class="main-info">{{userResume.weight}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="flex-start">
+          <view class="life-photo-area" wx:for="{{userResume.userLifePicture}}" wx:key="{{item}}">
+            <view data-index="{{index}}" bindtap="previewImg">
+              <image src="{{item}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="margin-wrap">
+        <view class="wrap">
+          <template is="resumeTitle" data="{{name:'学历信息',icon:'../../../images/education.png'}}" />
+          <view class="user-content">
+            <view class="flex-start">
+              <text class="user-content-title">教育情况：</text>
+              <text>{{userResume.eduSituation ? '已毕业' : '在校生'}}</text>
+            </view>
+            <view class="flex-start">
+              <text class="user-content-title">在读学校：</text>
+              <text>{{userResume.school}}</text>
+            </view>
+            <view class="flex-start">
+              <text class="user-content-title">入学年份：</text>
+              <text>{{userResume.startSchool}}</text>
+            </view>
+            <view class="flex-start">
+              <text class="user-content-title">学历：</text>
+              <text>{{userResume.degree}}</text>
+            </view>
+            <view class="flex-start">
+              <text class="user-content-title">专业：</text>
+              <text>{{userResume.profession}}</text>
+            </view>
+          </view>
+          <template is="resumeTitle" data="{{name:'求职意向',icon:'../../../images/job_intent.png'}}" />
+          <view class="user-content">
+            <view class="flex-start">
+              <text class="user-content-title">期望职位：</text>
+              <view class="flex-start align-center" style="flex:1">
+                <view class="flex-start align-center" style="height:56rpx" wx:for="{{userResume.jobIntent}}" wx:key="{{item}}">
+                  <text class="job-intent">{{item}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="flex-start">
+              <text class="user-content-title">期望地区：</text>
+              <text>{{userResume.address.province + ' ' + userResume.address.city + ' ' + userResume.address.area}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="margin-wrap">
+        <view class="wrap">
+          <template is="resumeTitle" data="{{name:'自我评价',icon:'../../../images/evaluation.png'}}" />
+          <view class="user-content">
+            <text>{{userResume.intro ? userResume.intro : userResume.oldIntro}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="margin-wrap">
+        <view class="wrap">
+          <template is="resumeTitle" data="{{name:'工作经验',icon:'../../../images/experience.png'}}" />
+          <view class="user-content">
+            <text>{{userResume.experience}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="margin-wrap">
+        <view class="wrap">
+          <template is="resumeTitle" data="{{name:'联系方式',icon:'../../../images/contact_method.png'}}" />
+          <view class="user-content">
+            <view class="flex-start">
+              <text class="user-content-title">电话：</text>
+              <text>{{userResume.mobile}}</text>
+            </view>
+            <view class="flex-start">
+              <text class="user-content-title">邮箱：</text>
+              <text>{{userResume.email}}</text>
+            </view>
+            <view class="flex-start">
+              <text class="user-content-title">QQ：</text>
+              <text>{{userResume.qq}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

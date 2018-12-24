@@ -1,0 +1,14 @@
+.life-photo-introduce {
+    padding: 0 32rpx;
+    line-height: 76rpx;
+    font-size: 28rpx;
+}
+.add-life-photo {
+    padding: 0 11rpx;
+}
+.add-life-photo image {
+    margin: 0 5rpx 20rpx;
+    width: 166rpx;
+    height: 166rpx;
+    border-radius: 8rpx;
+}

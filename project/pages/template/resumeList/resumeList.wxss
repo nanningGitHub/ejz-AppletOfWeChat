@@ -1,0 +1,19 @@
+.resume-left {
+  width: 182rpx;
+  height: 88rpx;
+}
+
+.resume-needed {
+  width: 40rpx;
+}
+
+.resume-needed text {
+  width: 40rpx;
+  font-size: 28rpx;
+  color: #37d3cb;
+  text-align: center;
+}
+
+.resume-name text {
+  font-size: 28rpx;
+}

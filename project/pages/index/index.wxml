@@ -1,0 +1,45 @@
+<view class='container'>
+  <!-- <swiper class='banner' autoplay='true' circular='true'>
+    <block wx:for="{{bannerList}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <image src="{{item.imageUrl}}" />
+      </swiper-item>
+    </block>
+  </swiper> -->
+  <view class='banner'>
+    <view class='search' bindtap='Search'>
+      <image src='../../images/search.png' class='search_icon'></image>
+      <text class='search_text'>搜索</text>
+    </view>
+    <image src='/images/banner.png' />
+  </view>
+  <view class='wrap'>
+    <view class='nav flex-between align-center'>
+      <navigator url='/pages/job/navList/navList?type={{item.type}}&job=2' class='nav-item flex-column-start align-center' wx:for="{{navList}}" wx:key="{{item.url}}">
+        <image src="{{'../../images/' + item.url + '.png'}}" />
+        <text>{{item.name}}</text>
+      </navigator>
+    </view>
+    <view class='message flex-start align-center'>
+      <image src='../../images/icon_notice.png' />
+      <swiper class='message-list' vertical='true' autoplay='true' circular='true'>
+        <block wx:for="{{messageList}}" wx:key="{{item.id}}">
+          <swiper-item class='flex-start align-center'>
+            <text>{{item.messageContent}}</text>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class='job wrap'>
+    <view class='job-title flex-start align-center'>
+      <image src='../../images/icon_recommend.png' />
+      <text>精品推荐</text>
+    </view>
+    <view class='job-list'>
+      <view wx:for="{{jobList}}" wx:key="{{item.id}}" data-item='{{item}}' bindtap="toJobDetail">
+        <job-item item="{{item}}"></job-item>
+      </view>
+    </view>
+  </view>
+</view>

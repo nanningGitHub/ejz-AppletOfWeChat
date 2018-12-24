@@ -1,0 +1,15 @@
+<view class="wrap">
+  <view class="list" wx:for="{{jobTypeList}}" wx:key="value">
+    <navigator url="/pages/job/navList/navList?type=practice&job={{item.value}}" class="mainType">
+      <text>{{item.key}}</text>
+      <image src="../../../images/icon_go.png"></image>
+    </navigator>
+    <view class="childrenType">
+      <view wx:for="{{item.childrenList}}" wx:for-item="childrenItem" wx:key="value">
+        <navigator url="/pages/job/navList/navList?type=practice&job={{childrenItem.value}}" style="{{(index+1) % 3 ? ((index+1) % 3 == 2 ? ('text-align:center') : ('text-align:left')) : ('text-align:right')}}">
+          {{childrenItem.key}}
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

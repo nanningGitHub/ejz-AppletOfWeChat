@@ -1,0 +1,60 @@
+/* pages/manage/forget/forget.wxss */
+.content {
+  display: block;
+  margin: 0 auto;
+  width: 634rpx;
+}
+
+.validate {
+  position: relative;
+}
+
+.get {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  font-size: 28rpx;
+  line-height: 106rpx;
+  color: #333;
+  background: none;
+  border: none;
+}
+
+input {
+  height: 106rpx;
+  font-size: 28rpx;
+  border: none;
+  border-bottom: 1px solid #eee;
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #888;
+}
+
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #888;
+}
+
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #888;
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #888;
+}
+
+.submit {
+  margin-top: 64rpx;
+  font-size: 28rpx;
+  line-height: 98rpx;
+  color: #fff;
+  text-align: center;
+  background: #37d3cb;
+  border-radius: 10rpx;
+}

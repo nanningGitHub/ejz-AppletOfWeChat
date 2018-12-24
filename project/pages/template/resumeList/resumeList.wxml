@@ -1,0 +1,10 @@
+<template name="resumeList">
+  <view class="flex-start align-center resume-left">
+    <view class="flex-start resume-needed">
+      <text wx:if="{{isNeed}}">*</text>
+    </view>
+    <view class="resume-name">
+      <text>{{name}}</text>
+    </view>
+  </view>
+</template>

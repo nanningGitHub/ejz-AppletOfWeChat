@@ -1,0 +1,14 @@
+<!--pages/userManage/register/register.wxml-->
+<form class='content' bindsubmit='register'>
+  <input type="number" name="mobile" placeholder="请输入11位手机号码" maxlength="11" bindinput="getMobile" style="margin-top: 70rpx;" />
+  <view class='validate'>
+    <input type="number" name="validate" placeholder="请输入验证码" maxlength='6' />
+    <view class='get' disabled='{{disabled}}' bindtap='getVerificationCode'>{{code}}</view>
+  </view>
+  <input type="password" name="password" placeholder="请输入密码（6-16位数字字母组合）" />
+  <!-- <input type="password" name="checkPassword" placeholder="请确认密码（6-16位数字字母组合）" /> -->
+  <button class="submit" form-type='submit'>注册</button>
+  <view class="btn flex-end">
+    <navigator url='/pages/manage/login/login' class="login">去登录</navigator>
+  </view>
+</form>

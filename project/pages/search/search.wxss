@@ -1,0 +1,75 @@
+/* pages/search/search.wxss */
+
+.search_box {
+  height: 86rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search_left {
+  width: 556rpx;
+  height: 54rpx;
+  background-color: #f2f2f2;
+  border-radius: 10rpx;
+  margin-left: 44rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search_icon {
+  height: 20rpx;
+  width: 20rpx;
+  background-size: 100% 100%;
+  margin-left: 22rpx;
+}
+
+.input_box {
+  width: 500rpx;
+  height: 100%;
+  font-size: 22rpx;
+  color: #666;
+  text-align: left;
+}
+
+.cancel {
+  font-size: 26rpx;
+  color: #37d3cb;
+  margin-right: 44rpx;
+}
+
+/* 猜你想找 */
+
+.guess_search {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 40rpx 44rpx 0 44rpx;
+}
+
+.guess_search_top {
+  font-size: 24rpx;
+  color: #333;
+  text-align: left;
+  margin-bottom: 24rpx;
+}
+
+.guess_search_item {
+  display: inline-block;
+  width: 126rpx;
+  height: 44rpx;
+  background-color: #f2f2f2;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 44rpx;
+  color: #666;
+  font-size: 22rpx;
+  margin-right: 52rpx;
+  margin-bottom: 26rpx;
+}
+
+.guess_search_item:nth-child(4n) {
+  margin-right: 0;
+}

@@ -1,0 +1,17 @@
+<!--pages/search/search.wxml-->
+<!-- <text>pages/search/search.wxml</text> -->
+<view class='search_box'>
+  <view class='search_left'>
+    <image class='search_icon' src='../../images/search_icon.png'></image>
+    <input type='text' bindinput="bindKeyInput" class='input_box'></input>
+  </view>
+  <text class='cancel' bindtap='Cancel'>确认</text>
+</view>
+<view class='guess_search'>
+  <view class='guess_search_top'>
+    猜你想要
+  </view>
+  <view class='guess_search_box'>
+    <view class='guess_search_item' wx:for="{{hotWords}}" bindtap='HotWord' data-item='{{item}}'>{{item}}</view>
+  </view>
+</view>

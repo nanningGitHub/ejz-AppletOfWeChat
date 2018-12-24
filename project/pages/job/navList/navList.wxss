@@ -1,0 +1,8 @@
+/* pages/job/navList/navList.wxss */
+page {
+  padding-bottom: 16rpx;
+  background: #f2f2f2;
+}
+.job-list {
+  overflow: hidden;
+}

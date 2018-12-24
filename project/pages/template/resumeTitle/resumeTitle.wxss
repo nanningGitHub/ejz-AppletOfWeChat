@@ -1,0 +1,17 @@
+.resume-title {
+    align-items: center;
+    height: 82rpx;
+    border-bottom: 1px solid #dbedff;
+}
+.resume-title-icon {
+  margin: 0 18rpx 0 10rpx;
+}
+
+.resume-title-icon image {
+    width: 40rpx;
+    height: 44rpx;
+}
+
+.resume-title text {
+    font-size: 30rpx;
+}

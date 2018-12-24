@@ -1,0 +1,22 @@
+<!--components/jobItem/jobItem.wxml-->
+<view class='item flex-between align-center'>
+  <image class='logo' src='{{item.image || item.smallImageUrl}}' style='border-radius: {{item.image && 0}}'/>
+  <view class='flex-1'>
+    <text class='title'>{{item.title}}</text>
+    <view class='flex-start align-center'>
+      <image class='icon-address' src='/images/icon_address.png' />
+      <text class='tip'>{{item.address}}</text>
+    </view>
+    <view class='flex-start align-center'>
+      <image class='icon-time' src='/images/icon_time.png' />
+      <text class='tip'>{{item.startTime}}至{{item.endTime}}</text>
+    </view>
+  </view>
+  <view class='fl'>
+    <view class='flex-start align-baseline'>
+      <text class='price'>{{item.salary}}</text>
+      <text class='date'>RMB/{{item.salaryUnitStr}}</text>
+    </view>
+    <text class='methods'>{{item.settlementTypeStr}}结</text>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+.out {
+  padding: 6rpx;
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+  background-color: rgba(55, 211, 203, 0.08);
+  overflow: hidden;
+}
+
+.in {
+  padding: 6rpx;
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+  background-color: rgba(55, 211, 203, 0.2);
+  overflow: hidden;
+}
+
+.in image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}

@@ -1,0 +1,11 @@
+<form bindsubmit="submitFeedback">
+  <view class="margin-wrap">
+    <view class="wrap feedback">
+      <input name="mobile" type="number" placeholder="联系方式（选填）" placeholder-class="feedback-input-placeholder" />
+      <textarea name="feedback" placeholder="意见反馈（必填）" placeholder-class="feedback-input-placeholder"/>
+    </view>
+  </view>
+  <view class="footer submit-button">
+    <button formType="submit" class="footer-button">提交</button>
+  </view>
+</form>

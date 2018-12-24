@@ -1,0 +1,45 @@
+<import src="../../template/jobList/jobList.wxml" />
+<view class="main-content">
+  <view class="margin-wrap">
+    <job-item item="{{item}}" />
+  </view>
+  <view class="margin-wrap">
+    <view class="wrap">
+      <view class="job-content">
+        <text>兼职类型：{{item.jobTypeStr}}</text>
+        <text>招聘人数：{{item.needNumber}}</text>
+        <text>性别要求：{{item.gender}}</text>
+      </view>
+      <view class="job-content job-content-bottom">
+        <text>工作日期：{{item.startTime}} 至 {{item.endTime}}</text>
+        <text>工作时段：{{item.startWorkTime}} 至 {{item.endWorkTime}}</text>
+        <view class="content-area">
+          <text>工作地点：</text>
+          <text class="address">{{item.address}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="margin-wrap">
+    <view class="wrap">
+      <view class="job-content">
+        <text>工作内容</text>
+        <text class="content">{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="footer">
+  <button class="footer-left" data-mobile="{{item.mobile}}" open-type="share">
+    <view class="contact" >
+      <image src="../../../images/share_icon.png"></image>
+      <text>分享</text>
+    </view>
+  </button>
+  <view class="footer-right" bindtap="deliverResume" wx:if="{{!isdeliver}}">
+    <text>投递简历</text>
+  </view>
+  <view class="footer-right footer-right-delivered" wx:else>
+    <text>已投递</text>
+  </view>
+</view>

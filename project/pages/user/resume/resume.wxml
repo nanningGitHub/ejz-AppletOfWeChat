@@ -1,0 +1,7 @@
+<import src="../../template/resume/resume.wxml" />
+<template is="resume" data="{{userResume}}" />
+<view bindtap="toEdit" class="footer">
+  <view class="footer-button">
+    <text>编辑简历</text>
+  </view>
+</view>

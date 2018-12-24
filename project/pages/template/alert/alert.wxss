@@ -1,0 +1,13 @@
+.alert {
+    position: absolute;
+    top: 50%;
+    margin: 0 auto;
+    padding: 0 20rpx; 
+    background: #000000;
+}
+
+.alert text{
+    line-height: 48rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+}

@@ -1,0 +1,73 @@
+@import "../../template/jobList/jobList.wxss";
+
+.main-content {
+  padding-bottom: 116rpx;
+}
+
+.job-content {
+  padding: 16rpx 34rpx 16rpx 30rpx;
+  line-height: 56rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #dbedff;
+}
+
+.job-content-bottom {
+  padding-bottom: 40rpx;
+}
+
+.content-area {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.address, .content {
+  flex: 1;
+  line-height: 40rpx;
+}
+
+.address {
+  margin-top: 8rpx;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-left {
+  background: #fff;
+  width: 30%;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contact text {
+  font-size: 32rpx;
+}
+
+.contact image {
+  width: 36rpx;
+  height: 48rpx;
+  margin-right: 12rpx;
+}
+
+.footer-right {
+  background: #37d3cb;
+  width: 70%;
+}
+
+.footer-right-delivered {
+  background: #bbb;
+}
+
+.footer-right text {
+  color: #fff;
+}

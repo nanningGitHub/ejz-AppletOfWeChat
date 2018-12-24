@@ -1,0 +1,15 @@
+<view class="margin-wrap">
+  <view class="wrap">
+    <text class="life-photo-introduce">每张生活照可增加6%简历完善度，最多上传12张</text>
+    <view class="flex-start add-life-photo">
+      <view wx:for="{{photoData}}">
+        <image src="{{item.url}}" data-index="{{index}}" bindtap="{{item.add ? 'addLifePhoto' : 'controllPhoto'}}"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="footer" bindtap="submitLifePhoto">
+  <view class="footer-button">
+    <text>提交</text>
+  </view>
+</view>

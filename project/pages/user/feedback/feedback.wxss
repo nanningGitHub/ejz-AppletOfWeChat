@@ -1,0 +1,29 @@
+.feedback {
+  padding-top: 18rpx;
+  min-height: 578rpx;
+}
+
+.feedback input {
+  margin: 0 auto;
+  padding-left: 20rpx;
+  width: 674rpx;
+  height: 88rpx;
+  font-size: 28rpx;
+  border: 1px solid #dbedff;
+  border-radius: 8rpx;
+}
+
+.feedback-input-placeholder {
+  font-size: 24rpx;
+  color: #bbb;
+}
+
+.feedback textarea {
+  margin: 18rpx auto 0;
+  padding: 20rpx;
+  width: 674rpx;
+  height: 380rpx;
+  font-size: 28rpx;
+  border: 1px solid #dbedff;
+  border-radius: 8rpx;
+}

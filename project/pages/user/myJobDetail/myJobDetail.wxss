@@ -1,0 +1,117 @@
+page {
+  background: #f2f2f2;
+}
+.job {
+  padding: 0 28rpx;
+  height: 178rpx;
+}
+
+.job-image image {
+  margin-top: 30rpx;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 8rpx;
+}
+
+.right-area {
+  flex: 1;
+  margin-left: 28rpx;
+}
+
+.first-area {
+  margin-top: 38rpx;
+}
+
+.first-area text {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.second-area {
+  margin-bottom: 38rpx;
+}
+
+.time text {
+  font-size: 24rpx;
+  color: #bbb;
+}
+
+.job-price text {
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  color: #bbb;
+}
+
+text.price {
+  font-size: 44rpx;
+  color: #fdba32;
+}
+
+.my-job-trail {
+  padding: 38rpx 24rpx;
+}
+
+.point {
+  width: 16rpx;
+  height: 16rpx;
+  background-color: #37d3cb;
+  border-radius: 50%;
+}
+
+.trail-title text {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #37d3cb;
+}
+
+.trail-content {
+  padding: 30rpx;
+}
+
+.trail-content text {
+  line-height: 42rpx;
+  font-size: 28rpx;
+  color: #bbb;
+}
+
+.image-trail-title {
+  padding: 0 30rpx;
+  height: 88rpx;
+  border-bottom: 1px solid #dbedff;
+}
+
+.image-trail-title text {
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+
+.image-trail {
+  position: relative;
+  padding: 50rpx 72rpx 0 72rpx;
+}
+
+.line {
+  position: absolute;
+  z-index: 0;
+  top: 99rpx;
+  width: 582rpx;
+  height: 2rpx;
+  background-color: #dbedff;
+}
+
+.image-trail-item {
+  z-index: 1;
+}
+
+.image-trail-item image {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #dbedff;
+  border-radius: 50%;
+}
+
+.image-trail-item text {
+  margin-top: 24rpx;
+  font-size: 24rpx;
+  text-align: center;
+}

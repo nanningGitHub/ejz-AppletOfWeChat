@@ -1,0 +1,136 @@
+<template name="jobList">
+  <view class="job" data-id="{{jobId}}" bindtap="toDetail">
+    <image src="{{image}}"></image>
+    <view class="textArea">
+      <view class="first-row flex-between align-center">
+        <text>{{title}}</text>
+        <text class="deal-status" style="{{dealStatus == 4 ? 'color: #bbbbbb' : ''}}">{{dealStatusStr}}</text>
+      </view>
+      <view class="second-row">
+        <view class="second-row-left">
+          <view class="job-type">
+            <text>{{jobTypeStr}}</text>
+          </view>
+          <view class="settlement">
+            <text>{{settlementTypeStr + "结"}}</text>
+          </view>
+        </view>
+        <view class="second-row-right">
+          <view class="price" wx:if="{{salaryUnitStr == '面议'}}">
+            <text>{{salaryUnitStr}}</text>
+          </view>
+          <view class="price" wx:else>
+            <text>{{salaryStr}}</text>
+          </view>
+          <view class="price-info" wx:if="{{salaryUnitStr != '面议'}}">
+            <text>{{"RMB/" + salaryUnitStr}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="third-row">
+        <view class="third-row-left">
+        </view>
+        <!--<view class="third-row-right">
+          <image src="../../../images/distance.png"></image>
+          <view class="location">
+            <text>km</text>
+          </view>
+        </view>-->
+      </view>
+    </view>
+  </view>
+</template>
+<view class="flex-between algin-center job-nav">
+  <text class="nav-item" data-index="0" bindtap="scrollTo" style="{{slider == 0 ? 'color:#37d3cb' : ''}}">全部</text>
+  <text class="nav-item" data-index="1" bindtap="scrollTo" style="{{slider == 1 ? 'color:#37d3cb' : ''}}">待录用</text>
+  <text class="nav-item" data-index="2" bindtap="scrollTo" style="{{slider == 2 ? 'color:#37d3cb' : ''}}">待上岗</text>
+  <text class="nav-item" data-index="3" bindtap="scrollTo" style="{{slider == 3 ? 'color:#37d3cb' : ''}}">待结算</text>
+  <text class="nav-item" data-index="4" bindtap="scrollTo" style="{{slider == 4 ? 'color:#37d3cb' : ''}}">已结算</text>
+  <view class="nav-line" style="{{'left:' + navLeft + 'px'}}"></view>
+</view>
+<view class="scroll">
+  <view class="flex-start scroll-area" style="{{'left: -' + 750 * slider + 'rpx'}}">
+    <view class="scroll-item">
+      <view wx:if="{{jobOfflineList.length}}">
+        <view class="margin-wrap" wx:for="{{jobOfflineList}}" wx:key="id">
+          <view class="wrap">
+            <template is="jobList" data="{{...item.solrJobOffline,...item}}" />
+          </view>
+        </view>
+      </view>
+      <view class="no-data" wx:else>
+        <image src="../../../images/background_nodata.png"></image>
+        <text>暂无记录</text>
+      </view>
+    </view>
+    <view class="scroll-item">
+      <view wx:if="{{dailuyongList.length}}">
+        <view class="margin-wrap" wx:for="{{dailuyongList}}" wx:key="id">
+          <view class="wrap">
+            <template is="jobList" data="{{...item.solrJobOffline, ...item}}" />
+            <view class="controll flex-end">
+              <view data-id="{{item.solrJobOffline.id}}" bindtap="deldeliverResume" class="controll-item flex-around align-center">
+                <text>取消投递</text>
+              </view>
+              <view data-mobile="{{item.solrJobOffline.mobile}}" bindtap="contactEnterprise" class="controll-item flex-around align-center">
+                <text>联系企业</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="no-data" wx:else>
+        <image src="../../../images/background_nodata.png"></image>
+        <text>暂无记录</text>
+      </view>
+    </view>
+    <view class="scroll-item">
+      <view wx:if="{{daiShangGangList.length}}">
+        <view class="margin-wrap" wx:for="{{daiShangGangList}}" wx:key="id">
+          <view class="wrap">
+<<<<<<< Updated upstream
+            <template is="jobList" data="{{...item.solrJobOffline}}" />
+            <view class="controll flex-end">
+<<<<<<< HEAD:pages/user/myJob/myJob.wxml
+=======
+            <template is="jobList" data="{{...item.solrJobOffline,...item}}" />
+            <!-- <view class="controll flex-end">
+>>>>>>> Stashed changes
+=======
+>>>>>>> parent of 1b04800... 优化项目:project/pages/user/myJob/myJob.wxml
+              <view data-id="{{item.solrJobOffline.id}}" bindtap="deldeliverResume" class="controll-item flex-around align-center">
+                <text>签到</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="no-data" wx:else>
+        <image src="../../../images/background_nodata.png"></image>
+        <text>暂无记录</text>
+      </view>
+    </view>
+    <view class="scroll-item">
+      <view wx:if="{{daiJieSuanList.length}}">
+        <!-- <view class="wrap">
+          <template is="jobList" data="{{...item.solrJobOffline,...item}}" />
+        </view> -->
+      </view>
+      <view class="no-data" wx:else>
+        <image src="../../../images/background_nodata.png"></image>
+        <text>暂无记录</text>
+      </view>
+    </view>
+    <view class="scroll-item">
+      <view wx:if="{{yiJieSuanList.length}}">
+        <!-- <view class="wrap">
+          <template is="jobList" data="{{...item.solrJobOffline,...item}}" />
+        </view> -->
+      </view>
+      <view class="no-data" wx:else>
+        <image src="../../../images/background_nodata.png"></image>
+        <text>暂无记录</text>
+      </view>
+    </view>
+  </view>
+</view>

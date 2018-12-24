@@ -1,0 +1,142 @@
+@import './pages/template/alert/alert.wxss';
+
+view, navigator, button, input, textarea {
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+input, text {
+  color: #333;
+}
+
+image {
+  display: block;
+}
+
+text {
+  display: block;
+}
+
+radio {
+  margin-right: 20rpx;
+}
+
+.wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 726rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.margin-wrap {
+  margin-top: 16rpx;
+}
+
+.padding-wrap {
+  padding-bottom: 116rpx;
+}
+
+.flex-start {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.flex-end {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.flex-between {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.flex-around {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-column-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.flex-column-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.main-info {
+  color: #37d3cb;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100rpx;
+}
+
+.footer-static {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100rpx;
+}
+
+.footer-button {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: #37d3cb;
+}
+
+.footer-button text {
+  color: #fff;
+}
+
+.submit-button button {
+  color: #fff;
+  border-radius: 0;
+}
+
+.no-data image {
+  margin: 200rpx auto 0;
+  width: 422rpx;
+  height: 360rpx;
+}
+
+.no-data text {
+  margin-top: 60rpx;
+  font-size: 28rpx;
+  color: #bbb;
+  text-align: center;
+}

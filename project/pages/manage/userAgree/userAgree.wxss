@@ -1,0 +1,7 @@
+.user-agree {
+    padding: 30rpx;
+}
+.user-agree text {
+    line-height: 50rpx;
+    font-size: 28rpx;
+}

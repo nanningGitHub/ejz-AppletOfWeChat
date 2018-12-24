@@ -1,0 +1,56 @@
+<view class="margin-wrap">
+  <view class="wrap ">
+    <view class="job flex-start">
+      <view class="job-image">
+        <image src="{{jobOffline.image}}"></image>
+      </view>
+      <view class="right-area flex-column-between">
+        <view class="first-area">
+          <text>{{jobOffline.title}}</text>
+        </view>
+        <view class="second-area flex-between align-center">
+          <view class="time">
+            <text>{{jobOffline.modifyTime}}</text>
+          </view>
+          <view class="job-price flex-start align-center" wx:if="{{jobOffline.salaryUnitStr == '面议'}}">
+            <text class="price">{{jobOffline.salaryUnitStr}}</text>
+          </view>
+          <view class="job-price flex-start align-center" wx:else>
+            <text class="price">{{jobOffline.salary}}</text>
+            <text>{{"RMB/" + jobOffline.salaryUnitStr}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="margin-wrap">
+  <view class="wrap" style="height: 336rpx;">
+    <view class="image-trail-title flex-start align-center">
+      <view class="point"></view>
+      <text>兼职轨迹</text>
+    </view>
+    <view class="image-trail flex-between">
+      <view class="line"></view>
+      <view class="image-trail-item" wx:for="{{step}}">
+        <image src="{{item.image}}"></image>
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class=" margin-wrap ">
+  <view class="wrap ">
+    <view class="my-job-trail ">
+      <view class="trail " wx:for="{{workFlow}}">
+        <view class="trail-title flex-start align-center">
+          <view class="point"></view>
+          <text>{{item.time}}</text>
+        </view>
+        <view class="trail-content ">
+          <text>{{item.info}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

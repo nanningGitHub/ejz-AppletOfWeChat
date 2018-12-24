@@ -1,0 +1,87 @@
+page {
+  background: #eee;
+}
+.container {
+  padding-top: 226rpx;
+  padding-bottom: 16rpx;
+  overflow: hidden;
+}
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 242rpx;
+}
+.search{
+  position: absolute;
+  top: 26rpx;
+  width: 556rpx;
+  height: 54rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  opacity: 0.7;
+  left: 50%;
+  margin-left: -278rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+.banner .search_icon{
+  width: 20rpx;
+  height: 20rpx;
+  background-size: 100% 100%;
+}
+.search_text{
+  font-size: 22rpx;
+  color: #aaaaaa;
+  margin-left: 12rpx;
+}
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+.nav {
+  padding: 40rpx 58rpx 36rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.nav-item image {
+  width: 80rpx;
+  height: 80rpx;
+}
+.nav-item text {
+  margin-top: 14rpx;
+  font-size: 24rpx;
+}
+.message {
+  padding-left: 208rpx;
+}
+.message image {
+  width: 23rpx;
+  height: 20rpx;
+}
+.message-list {
+  margin-left: 18rpx;
+  flex: 1;
+  height: 62rpx;
+}
+.message-list text {
+  font-size: 20rpx;
+  color: #aaa;
+}
+.job {
+  margin-top: 16rpx;
+}
+.job-title {
+  padding-left: 24rpx;
+  height: 62rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.job-title image {
+  width: 25rpx;
+  height: 25rpx;
+}
+.job-title text {
+  margin-left: 10rpx;
+  font-size: 26rpx;
+}

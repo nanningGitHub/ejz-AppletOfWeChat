@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "兼职详情",
+    "usingComponents": {
+      "job-item": "/components/indexItem/jobItem"
+    }
+}

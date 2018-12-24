@@ -1,0 +1,85 @@
+@import "../../template/jobList/jobList.wxss";
+
+page {
+  background: #f2f2f2;
+  height: 100%;
+}
+
+.job-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 30rpx;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  z-index: 99;
+}
+
+.nav-item {
+  display: block;
+  width: 88rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 24rpx;
+  color: #bbb;
+  text-align: center;
+}
+
+.nav-line {
+  position: absolute;
+  bottom: 0;
+  left: 30rpx;
+  width: 88rpx;
+  height: 4rpx;
+  background-color: #37d3cb;
+  transition: left ease-in-out 300ms;
+}
+
+.scroll {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.scroll-area {
+  position: absolute;
+  top: 0;
+  padding-top: 100rpx;
+  width: 500%;
+  height: 100%;
+  transition: left ease-in-out 300ms;
+}
+
+.scroll-item {
+  width: 750rpx;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.first-row text.deal-status {
+  font-size: 24rpx;
+  color: #37d3cb;
+  font-weight: normal;
+}
+
+.controll {
+  height: 88rpx;
+  border-top: 1px solid #dbedff;
+}
+
+.controll-item {
+  width: 210rpx;
+  border-left: 1px solid #dbedff;
+}
+
+.controll-item text {
+  font-size: 28rpx;
+  color: #37d3cb;
+}
+
+.deal-price {
+  font-size: 24rpx;
+  color: #fdba32;
+}

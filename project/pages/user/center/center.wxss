@@ -1,0 +1,193 @@
+page {
+  background: #eee;
+}
+
+.title {
+  padding: 48rpx;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.portrait {
+  margin-right: 50rpx;
+  padding: 10rpx;
+  width: 180rpx;
+  height: 180rpx;
+  border: 1rpx solid #f5f5f5;
+  border-radius: 50%;
+}
+
+.portrait image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.name {
+  font-size: 44rpx;
+  color: #333;
+}
+
+.title .display_b {
+  display: block;
+}
+
+.remaining {
+  display: none;
+  margin-top: 36rpx;
+  color: #37d3cb;
+  font-size: 34rpx;
+}
+
+.remaining text {
+  display: inline;
+  color: #333;
+  font-size: 20rpx;
+}
+
+.wallet_box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wallet {
+  display: none;
+  margin-top: 0rpx;
+  font-size: 24rpx;
+}
+
+.wallet_arrow {
+  display: none;
+  margin-left: 10rpx;
+  height: 14rpx;
+  width: 7rpx;
+  background-size: 100% 100%;
+}
+
+.resume {
+  margin-top: 16rpx;
+  padding: 28rpx 52rpx 22rpx 34rpx;
+  background: #fff;
+  border-radius: 0.1rem;
+}
+
+.resume .resume-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume .resume-content h3 {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.resume .resume-content p {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: #666;
+}
+<<<<<<< HEAD:pages/user/center/center.wxss
+<<<<<<< Updated upstream
+.resume-content navigator {
+=======
+
+.nResume {
+>>>>>>> Stashed changes
+=======
+.resume-content navigator {
+>>>>>>> parent of 1b04800... 优化项目:project/pages/user/center/center.wxss
+  margin-top: 50rpx;
+  display: inline-block;
+  width: 126rpx;
+  font-size: 22rpx;
+  line-height: 34rpx;
+  color: #fff;
+  text-align: center;
+  background: #37d3cb;
+  border-radius: 5rpx;
+}
+
+.progress {
+  padding: 8rpx;
+  width: 146rpx;
+  height: 146rpx;
+  border: 1rpx solid #f5f5f5;
+  border-radius: 50%;
+}
+
+.progress-out {
+  padding: 28rpx;
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  border-radius: 50%;
+}
+
+.progress-in {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.progress-in text {
+  line-height: 74rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #37d3cb;
+}
+
+.resume img {
+  width: 146rpx;
+  height: 146rpx;
+  border: 1rpx solid pink;
+}
+
+.delivery {
+  margin: 20rpx 15rpx;
+  padding: 26rpx 58rpx 26rpx 35rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.delivery text {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.arrow {
+  width: 12rpx;
+  height: 20rpx;
+}
+
+.delivery ul {
+  padding-left: 12rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delivery ul li {
+  margin-top: 26rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+ul li p {
+  margin-top: 20rpx;
+  font-size: 22rpx;
+  line-height: 22rpx;
+  color: #666;
+}
+
+ul li image {
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+}

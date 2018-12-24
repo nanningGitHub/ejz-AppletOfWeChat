@@ -1,0 +1,10 @@
+<template name="userList">
+  <navigator url="{{url}}" class="user-list">
+    <view>
+      <text class="list-name">{{name}}</text>
+    </view>
+    <view class="icon-arrow">
+      <image src="../../../images/icon_go.png"></image>
+    </view>
+  </navigator>
+</template>

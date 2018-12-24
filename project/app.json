@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/manage/login/login",
+    "pages/manage/register/register",
+    "pages/manage/forget/forget",
+    "pages/job/list/list",
+    "pages/job/detail/detail",
+    "pages/job/deliverSuccess/deliverSuccess",
+    "pages/job/intent/intent",
+    "pages/user/center/center",
+    "pages/user/resume/resume",
+    "pages/user/editResume/editResume",
+    "pages/user/lifePhoto/lifePhoto",
+    "pages/user/myJob/myJob",
+    "pages/user/myJobDetail/myJobDetail",
+    "pages/user/deliver/deliver",
+    "pages/job/navList/navList",
+    "pages/search/search"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "e兼职",
+    "backgroundColor": "#f2f2f2",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#333",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tab_1_un.png",
+        "selectedIconPath": "images/tab_1.png"
+      },
+      {
+        "pagePath": "pages/job/list/list",
+        "text": "岗位",
+        "iconPath": "images/tab_2_un.png",
+        "selectedIconPath": "images/tab_2.png"
+      },
+      {
+        "pagePath": "pages/user/center/center",
+        "text": "我的",
+        "iconPath": "images/tab_3_un.png",
+        "selectedIconPath": "images/tab_3.png"
+      }
+    ]
+  }
+}
