@@ -88,16 +88,8 @@
       <view wx:if="{{daiShangGangList.length}}">
         <view class="margin-wrap" wx:for="{{daiShangGangList}}" wx:key="id">
           <view class="wrap">
-<<<<<<< Updated upstream
-            <template is="jobList" data="{{...item.solrJobOffline}}" />
-            <view class="controll flex-end">
-<<<<<<< HEAD:pages/user/myJob/myJob.wxml
-=======
             <template is="jobList" data="{{...item.solrJobOffline,...item}}" />
-            <!-- <view class="controll flex-end">
->>>>>>> Stashed changes
-=======
->>>>>>> parent of 1b04800... 优化项目:project/pages/user/myJob/myJob.wxml
+            <view class="controll flex-end">
               <view data-id="{{item.solrJobOffline.id}}" bindtap="deldeliverResume" class="controll-item flex-around align-center">
                 <text>签到</text>
               </view>

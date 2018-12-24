@@ -51,7 +51,7 @@ Page({
       }
     })
   },
-  getCityId: function(city) {
+  getCityId: function(city) {      //
     wxRequest.getRequest('api/city/getCity.do', {
         cityName: city
       })

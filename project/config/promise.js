@@ -1,6 +1,6 @@
 const Promise = require("../plugins/es6-promise.js")
-// const openUrl = "https://openapi.ejzhi.com/"
-const openUrl = "http://localtestapi.ejzhi.com/"
+const openUrl = "https://openapi.ejzhi.com/"
+// const openUrl = "http://localtestapi.ejzhi.com/"
 const app = getApp()
 
 function wxPromisify(fn) {
@@ -43,7 +43,6 @@ Promise.prototype.finally = function(callback) {
  */
 function getRequest(url, data) {
   var getRequest = wxPromisify(wx.request)
-
   return getRequest({
     url: openUrl + url,
     method: 'GET',

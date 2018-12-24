@@ -81,7 +81,8 @@ Page({
   onLoad: function(options) {
     console.log(options)
     this.init.option = options
-    if (options.type !== 'high') this.getBaseList(options)
+    if (options.type !== 'high')
+      this.getBaseList(options)
     else this.getList()
   },
 

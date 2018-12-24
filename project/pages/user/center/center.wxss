@@ -92,16 +92,8 @@ page {
   line-height: 26rpx;
   color: #666;
 }
-<<<<<<< HEAD:pages/user/center/center.wxss
-<<<<<<< Updated upstream
-.resume-content navigator {
-=======
 
-.nResume {
->>>>>>> Stashed changes
-=======
 .resume-content navigator {
->>>>>>> parent of 1b04800... 优化项目:project/pages/user/center/center.wxss
   margin-top: 50rpx;
   display: inline-block;
   width: 126rpx;

@@ -36,11 +36,9 @@ Page(filter.loginCheck({
   },
   myJob() {
     wx.navigateTo({
-     url:'/pages/user/myJob/myJob'
+      url: '/pages/user/myJob/myJob'
     })
-  }
-}))
-=======
+  },
   myJob() {
     console.log(app.globalData.token)
     if (app.globalData.token == '') {
@@ -76,11 +74,10 @@ Page(filter.loginCheck({
       icon: 'success',
       mask: true
     })
-  }
-})
+  },
   myJob() {
     wx.navigateTo({
-     url:'/pages/user/myJob/myJob'
+      url: '/pages/user/myJob/myJob'
     })
   }
 }))

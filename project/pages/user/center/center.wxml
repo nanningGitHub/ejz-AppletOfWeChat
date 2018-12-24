@@ -16,17 +16,7 @@
     <view class="resume-content">
       <h3>我的简历</h3>
       <p>完善简历能提升您的录取率哦！</p>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-      <navigator url="{{user.resumedataNum && '/pages/user/resume/resume' || '/pages/user/editResume/editResume'}}">{{user.resumedataNum && '立即完善' || '填写简历'}}</navigator>
-=======
-      <!-- <navigator url="{{user.resumedataNum && '/pages/user/resume/resume' || '/pages/user/editResume/editResume'}}">{{user.resumedataNum && '立即完善' || '填写简历'}}</navigator> -->
-      <view class='nResume'>{{user.resumedataNum && '立即完善' || '填写简历'}}</view>
->>>>>>> Stashed changes
-=======
-      <!-- <navigator url="{{user.resumedataNum && '/pages/user/resume/resume' || '/pages/user/editResume/editResume'}}">{{user.resumedataNum && '立即完善' || '填写简历'}}</navigator> -->
       <view class='nResume' bindtap='myResume'>{{user.resumedataNum && '立即完善' || '填写简历'}}</view>
->>>>>>> parent of cbf0755... 补充提交
     </view>
     <view class='progress'>
       <view class='progress-out' style=' position: relative;'>
