@@ -1,0 +1,15 @@
+<!--pages/wallet/detail/detail.wxml-->
+
+<view class='item' wx:for='{{recordList}}' wx:key='{{item.index}}'>
+  <view class='item_left'>
+    <text class='title'>{{item.recordTypeStr}}</text>
+    <text class='banknub'>{{item.payType==0?item.withdrawType==1?'支付宝:'+item.alipayAccount:'银行卡: **** **** **** '+item.bankNumber:item.jobName}}</text>
+  </view>
+  <view class='item_right'>
+    <view class='Money'>
+      <text class='rmb'>{{item.payType?'+':'-'}}{{item.currentMoney}}</text>
+      <text class='yuan'> RMB</text>
+    </view>
+    <text class='time'>{{item.createdDate}}</text>
+  </view>
+</view>

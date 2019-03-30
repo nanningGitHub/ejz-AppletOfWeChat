@@ -1,0 +1,40 @@
+/* pages/manage/loginNew.wxss */
+
+.logo {
+  margin: 165rpx auto 0rpx;
+  width: 138rpx;
+  height: 138rpx;
+}
+
+.logoText {
+  margin: 46rpx auto 143rpx;
+  height: 115rpx;
+  width: 212rpx;
+}
+.button{
+  width: 634rpx;
+  height: 98rpx;
+  margin: auto;
+  background-color: #37d3cb;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.button button{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.button text{
+  color: #fefefe;
+  font-size: 30rpx;
+}
+.button_bg{
+  background-color: #ffffff;
+}
+.button_bg text{
+  color:#37d3cb; 
+}

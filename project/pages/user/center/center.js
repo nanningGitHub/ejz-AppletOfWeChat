@@ -4,7 +4,9 @@ const wxRequest = require('../../../config/promise.js')
 Page(filter.loginCheck({
   data: {
     user: {},
-    token: ''
+    rawData: {},
+    token: '',
+
   },
   onLoad: function(options) {
     this.setData({
@@ -24,8 +26,13 @@ Page(filter.loginCheck({
   },
   onReady: function(e) {
     // 页面渲染完成
+    const rawData = wx.getStorageSync('rawData')
+    this.setData({
+      rawData: JSON.parse(rawData)
+    })
   },
   onShow: function() {
+
     // 页面显示
   },
   onHide: function() {
@@ -35,12 +42,6 @@ Page(filter.loginCheck({
     // 页面关闭
   },
   myJob() {
-    wx.navigateTo({
-      url: '/pages/user/myJob/myJob'
-    })
-  },
-  myJob() {
-    console.log(app.globalData.token)
     if (app.globalData.token == '') {
       wx.navigateTo({
         url: "/pages/manage/login/login"
@@ -51,8 +52,32 @@ Page(filter.loginCheck({
       })
     }
   },
+  quit() {
+    let that = this;
+    wx.showModal({
+      title: '提示',
+      content: '退出且解除手机号绑定',
+      success(res) {
+        if (res.confirm) {
+          that.logout()
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  logout() {
+    wxRequest.getRequest('mini/wechat/logout.do', {
+        token: app.globalData.token
+      })
+      .then(res => {
+        wx.removeStorageSync('token')
+        wx.switchTab({
+          url: '/pages/index/index'
+        })
+      })
+  },
   myResume() {
-    console.log(this.data.user.resumedataNum)
     if (app.globalData.token == '') {
       wx.navigateTo({
         url: "/pages/manage/login/login"
@@ -69,15 +94,8 @@ Page(filter.loginCheck({
     }
   },
   Withdraw() {
-    wx.showToast({
-      title: '请前往app提现',
-      icon: 'success',
-      mask: true
+    wx.navigateTo({
+      url:'/pages/wallet/wallet/wallet'
     })
   },
-  myJob() {
-    wx.navigateTo({
-      url: '/pages/user/myJob/myJob'
-    })
-  }
 }))

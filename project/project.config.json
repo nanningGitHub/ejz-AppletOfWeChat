@@ -4,11 +4,14 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": true,
+		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.1",
@@ -27,13 +30,44 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "岗位",
+					"pathName": "pages/job/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/center/center",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "获取用户信息页面",
+					"pathName": "pages/manage/userinfo/userinfo",
+					"query": "",
+					"scene": null
+				}
+			]
 		}
 	}
 }

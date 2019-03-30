@@ -274,7 +274,6 @@ Page({
         }
       }
     }
-    console.log(intent)
     this.setData({
       intent: intent
     })
@@ -296,7 +295,6 @@ Page({
     //     that.setData({
     //       intent: intent
     //     })
-    //     console.log(that.data.intent)
     //   },
     // })
 
@@ -435,7 +433,6 @@ Page({
     })
   },
   formSubmit: function(e) { //提交表单
-    console.log(e.detail.value)
     var self = this
     if (e.detail.value.realName == "") {
       wx.showModal({

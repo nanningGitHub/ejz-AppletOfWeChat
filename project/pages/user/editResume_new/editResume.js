@@ -125,7 +125,6 @@ Page({
     for (var i = 0; i < e.detail.value.length; i++) {
       introData = introData.concat(this.data.introduce[e.detail.value[i]].name)
     }
-    console.log(introData)
     this.setData({
       intro: introData.toString()
     })

@@ -17,7 +17,7 @@ App({
     })
       .then(res => {
         wx.setStorageSync('token', res.dataMap.token)
-        this.globalData.token = res.dataMap.token
+        this.globalData.token = res.dataMap.token;
       })
       .catch(err => {
         if (err.data.code === 101) {
@@ -33,7 +33,7 @@ App({
     // Do something when hide.
   },
   onError: function (msg) {
-    console.log(msg)
+    
   },
   globalData: {
     token: '',

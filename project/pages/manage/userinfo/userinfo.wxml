@@ -1,0 +1,12 @@
+<!--pages/manage/userinfo/userinfo.wxml-->
+<image src='/images/logo.png' class='logo'></image>
+<image src='/images/logo_text.png' class='logoText'></image>
+<view class='hint_box'>
+  <text class='text'>授权后该应用将获得以下权限</text>
+  <text class='text_hint'>*获取你的公开信息（昵称、头像等）</text>
+</view>
+<view class='button'>
+  <text>立即授权</text>
+  <button bindgetuserinfo='onGotUserInfo' open-type="getUserInfo">获取用户信息</button>
+</view>
+

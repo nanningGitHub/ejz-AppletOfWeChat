@@ -16,8 +16,29 @@
     "pages/user/myJobDetail/myJobDetail",
     "pages/user/deliver/deliver",
     "pages/job/navList/navList",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/manage/loginNew/loginNew",
+    "pages/manage/userinfo/userinfo",
+    "pages/wallet/wallet/wallet",
+    "pages/wallet/detail/detail",
+    "pages/wallet/explain/explain",
+    "pages/wallet/amend/amend",
+    "pages/wallet/key/key",
+    "pages/wallet/card/card",
+    "pages/wallet/binding/binding",
+    "pages/wallet/BindingSuccess/BindingSuccess",
+    "pages/wallet/setpassword/setpassword",
+    "pages/wallet/Unbundpassword/Unbundpassword",
+    "pages/wallet/withdrawDeposit/withdrawDeposit",
+    "pages/wallet/WithdrawPassword/WithdrawPassword",
+    "pages/wallet/WithdrawSuccess/WithdrawSuccess",
+    "pages/wallet/confirmPassword/confirmPassword"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "window": {
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "black",

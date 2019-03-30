@@ -58,7 +58,6 @@ Page({
     wx.showActionSheet({
       itemList: ['查看', '删除'],
       success: function (res) {
-        console.log(res.tapIndex)
         switch (res.tapIndex) {
           case 0: wx.previewImage({
             current: self.data.imgArray[parseInt(e.currentTarget.dataset.index)],
@@ -125,7 +124,6 @@ Page({
       this.freeCount = 12 - this.photoListData.length > 9 ? 9 : 12 - this.photoListData.length
       photoData = this.photoListData
       photoData = photoData.length < 12 ? photoData.concat({ add: true, url: '../../../images/life_photo.png' }) : photoData
-      console.log(photoData)
       this.setData({
         imgArray: userResume.userLifePicture,
         photoData: photoData

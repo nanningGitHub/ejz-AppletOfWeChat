@@ -18,7 +18,6 @@ Page({
     flagJob: false,
     flagSort: false,
     flagFilter: false,
-
     items: [{
         value: '不限',
         checked: true
@@ -49,7 +48,6 @@ Page({
     this.GetJobLists();
   },
   selectSort(e) {
-    console.log(e.currentTarget.dataset.flag)
     if (e.currentTarget.dataset.flag == 'flagJob') {
       this.data.flagJob = !this.data.flagJob;
       this.data.flagSort = false;
@@ -89,10 +87,8 @@ Page({
     wx.getStorage({
       key: 'token',
       success: function(res) {
-        console.log(res.data)
       },
       fail: function() {
-        console.log('getStorageFalse')
       }
     })
   },
@@ -107,12 +103,10 @@ Page({
         res.dataMap.jobTypeList[0].flag = true;
         let childrenList = res.dataMap.jobTypeList[0].childrenList;
         childrenList[0].flag = true;
-        console.log(res.dataMap.jobTypeList[0].childrenList)
         this.setData({
           dataMap: res.dataMap,
           childrenList: childrenList
         })
-        console.log(this.data.dataMap)
       })
       .then(res => {
         // this.getIndexList()
@@ -278,7 +272,6 @@ Page({
       })
       .then(res => {
         let jobOfflinePage = res.dataMap.jobOfflinePage;
-        console.log(jobOfflinePage)
         let BeforeJobOfflinePage = this.data.jobOfflinePage;
         jobOfflinePage.dataList.map(item => {
           item.startTime = Utils.getLocalTime(item.startDate)

@@ -70,6 +70,7 @@ page {
 
 .resume {
   margin-top: 16rpx;
+  margin-bottom: 16rpx;
   padding: 28rpx 52rpx 22rpx 34rpx;
   background: #fff;
   border-radius: 0.1rem;
@@ -141,17 +142,30 @@ page {
   border: 1rpx solid pink;
 }
 
+.wrap {
+  border-radius: 0rpx;
+}
+
 .delivery {
-  margin: 20rpx 15rpx;
+  border-top: 2rpx solid #eee;
   padding: 26rpx 58rpx 26rpx 35rpx;
   background: #fff;
-  border-radius: 10rpx;
+  position: relative;
 }
 
 .delivery text {
   font-size: 30rpx;
   font-weight: 600;
   color: #333;
+}
+
+.delivery button {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 
 .arrow {

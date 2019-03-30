@@ -93,7 +93,7 @@
       <view class="flex-start resume-list">
         <template is="resumeList" data="{{isNeed:true,name:'期望职位'}}" />
         <checkbox-group name="intent" bindchange="intentChange" class="flex-start checkbox-list">
-          <label class="flex-start align-center checkbox-item" wx:for="{{intent}}">
+          <label class="flex-start align-center checkbox-item" wx:for="{{intent}}" wx:key="{{index}}">
             <checkbox value="{{item.value}}" checked="{{item.checked}}" />
             <text data-index="{{index}}" class="{{item.checked?'checkbox-checked' : ''}}">{{item.key}}</text>
           </label>
@@ -151,7 +151,7 @@
       <view class="flex-start resume-list">
         <template is="resumeList" data="{{isNeed:false,name:'自我简介'}}" />
         <checkbox-group name="introduce" bindchange="introduceChange" class="flex-start checkbox-list">
-          <label class="flex-start align-center checkbox-item" wx:for="{{introduce}}">
+          <label class="flex-start align-center checkbox-item" wx:for="{{introduce}}" wx:key='{{index}}'>
             <checkbox value="{{item.value}}" checked="{{item.checked}}" />
             <text data-index="{{index}}" class="{{item.checked ? 'checkbox-checked' : ''}}">{{item.name}}</text>
           </label>

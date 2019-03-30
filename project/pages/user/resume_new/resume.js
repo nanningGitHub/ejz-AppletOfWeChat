@@ -11,7 +11,6 @@ Page({
       token: app.globalData.token
     })
       .then(res => {
-        console.log(res.dataMap.userResume)
         let resume = res.dataMap.userResume
         let editResumeInfo = {
           provinceId: resume.provinceId,

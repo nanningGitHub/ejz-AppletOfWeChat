@@ -1,0 +1,56 @@
+/* pages/manage/userinfo/userinfo.wxss */
+
+.logo {
+  margin: 165rpx auto 0rpx;
+  width: 138rpx;
+  height: 138rpx;
+}
+
+.logoText {
+  margin: 46rpx auto 92rpx;
+  height: 115rpx;
+  width: 212rpx;
+}
+
+.hint_box {
+  margin: auto;
+  width: 634rpx;
+}
+
+.text {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.text_hint {
+  margin-top: 32rpx;
+  color: #666;
+  font-size: 24rpx;
+  font-weight: 400;
+}
+
+.button {
+  margin: 64rpx auto 0rpx;
+  width: 634rpx;
+  height: 98rpx;
+  background-color: #37d3cb;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.button text {
+  font-size: 30rpx;
+  color: #fefefe;
+  font-weight: 600;
+}
+
+.button button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

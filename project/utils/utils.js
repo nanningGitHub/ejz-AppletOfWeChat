@@ -148,6 +148,67 @@ var Utils = {
         return "/images/offline/offline_other.png";
         break;
     }
+  },
+  bankMessage: function(bankTypeId) {
+    const bank = {
+      1: {
+        bankName: '中国农业银行',
+        bankloge: 'ABC'
+      },
+      2: {
+        bankName: '中国银行',
+        bankloge: 'BOC'
+      },
+      3: {
+        bankName: '中国建设银行',
+        bankloge: 'CCB'
+      },
+      4: {
+        bankName: '中国工商银行',
+        bankloge: 'ICBC'
+      },
+      5: {
+        bankName: '中国民生银行',
+        bankloge: 'CMSB'
+      },
+      6: {
+        bankName: '招商银行',
+        bankloge: 'CMB'
+      },
+      7: {
+        bankName: '兴业银行',
+        bankloge: 'CIB'
+      },
+      8: {
+        bankName: '中信银行',
+        bankloge: 'CITIC'
+      },
+      9: {
+        bankName: '中国光大银行',
+        bankloge: 'CEB'
+      },
+      10: {
+        bankName: '平安银行',
+        bankloge: 'SPABANK'
+      },
+      11: {
+        bankName: '中国邮政储蓄银行',
+        bankloge: 'PSBC'
+      },
+      12: {
+        bankName: '交通银行',
+        bankloge: 'COMM'
+      },
+      13: {
+        bankName: '广东发展银行',
+        bankloge: 'GDB'
+      },
+      14: {
+        bankName: '浦发银行',
+        bankloge: 'SPDB'
+      }
+    }
+    return bank[bankTypeId] || [];
   }
 }
 

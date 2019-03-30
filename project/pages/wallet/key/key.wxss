@@ -1,0 +1,56 @@
+/* pages/wallet/key/key.wxss */
+
+/* pages/wallet/amend/amend.wxss */
+
+page {
+  background-color: #f2f2f2;
+}
+
+.content {
+  margin: 16rpx auto 0rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  width: 726rpx;
+}
+
+.item {
+  height: 106rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.item text, input {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.item text {
+  width: 200rpx;
+  text-indent: 36rpx;
+}
+
+.color {
+  color: #888;
+}
+
+.line {
+  height: 1rpx;
+  background-color: #f2f2f2;
+}
+
+.button {
+  margin: 40rpx auto 0rpx;
+  width: 634rpx;
+  height: 98rpx;
+  border-radius: 10rpx;
+  background-color: #37d3cb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button text {
+  font-size: 30rpx;
+  color: #fff;
+}

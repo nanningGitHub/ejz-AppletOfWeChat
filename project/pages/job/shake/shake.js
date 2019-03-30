@@ -102,7 +102,6 @@ Page({
             },
             fail: function () {
                 self.cityId = 3924
-                console.log('定位失败')
             }
         })
     },

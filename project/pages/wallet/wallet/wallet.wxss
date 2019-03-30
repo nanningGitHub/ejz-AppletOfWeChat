@@ -1,0 +1,104 @@
+/* pages/wallet/wallet/wallet.wxss */
+
+page {
+  background-color: #f2f2f2;
+}
+
+.inner {
+  width: 726rpx;
+  margin: auto;
+}
+
+.top {
+  margin-top: 16rpx;
+  margin-bottom: 16rpx;
+  height: 297rpx;
+  width: 726rpx;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.top_bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.explain {
+  height: 36rpx;
+  width: 36rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.top_sum, .top_title {
+  color: #fff;
+  text-align: center;
+}
+
+.top_title {
+  margin-top: 65rpx;
+  font-size: 32rpx;
+}
+
+.top_sum {
+  margin-top: 30rpx;
+  font-size: 80rpx;
+}
+
+/* 内容列表模块 */
+
+.list {
+  background-color: #fff;
+  width: 726rpx;
+  border-radius: 10rpx;
+}
+
+.item {
+  height: 104rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.item_icon {
+  margin-left: 35rpx;
+  margin-right: 30rpx;
+  width: 52rpx;
+  height: 52rpx;
+}
+
+.item_title {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.into {
+  position: absolute;
+  right: 34rpx;
+  width: 12rpx;
+  height: 20rpx;
+}
+
+/* 提现按钮 */
+
+.button {
+  margin: 140rpx auto 0rpx;
+  height: 98rpx;
+  width: 634rpx;
+  background-color: #37d3cb;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button text {
+  color: #fefefe;
+  font-size: 30rpx;
+}

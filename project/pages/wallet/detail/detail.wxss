@@ -1,0 +1,52 @@
+/* pages/wallet/detail/detail.wxss */
+
+page {
+  background-color: #f2f2f2;
+}
+
+.item {
+  height: 158rpx;
+  width: 726rpx;
+  margin: 16rpx auto 16rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding: 30rpx 40rpx 30rpx 44rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item_left, .item_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.item_right{
+  align-items: flex-end;
+}
+.title {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+}
+.Money{
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-end;
+}
+.rmb {
+  font-size: 40rpx;
+  color: #37d3cb;
+  line-height: 40rpx;
+}
+
+.yuan {
+  margin-left:8rpx; 
+  font-size: 22rpx;
+  color: #37d3cb;
+}
+
+.banknub, .time {
+  font-size: 24rpx;
+  color: #888;
+}

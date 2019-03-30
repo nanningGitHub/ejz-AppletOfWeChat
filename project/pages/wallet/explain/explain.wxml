@@ -1,0 +1,3 @@
+<!--pages/wallet/explain/explain.wxml-->
+<!-- 跳转  H5 链接 -->
+ <web-view src='http://www.ejzhi.com/apph5/app/app_tixianshuoming.html'></web-view>

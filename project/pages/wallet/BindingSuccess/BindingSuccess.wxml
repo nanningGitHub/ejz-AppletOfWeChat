@@ -1,0 +1,9 @@
+<!--pages/wallet/BindingSuccess/BindingSuccess.wxml-->
+
+<view class='content'>
+  <image class='' src='../../../images/wallet/hint.png'></image>
+  <text class=''>绑定成功</text>
+</view>
+<view class='return' bindtap='returnWallet'>
+  <text class=''>返回钱包</text>
+</view>

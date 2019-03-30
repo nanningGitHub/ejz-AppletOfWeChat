@@ -1,10 +1,10 @@
 <view>
   <view class="title flex-start align-center">
     <view class='portrait'>
-      <image src="{{user.headerUrl || '/images/portrait.png'}}" />
+      <image src="{{user.headerUrl ||rawData.avatarUrl||'/images/portrait.png'}}" />
     </view>
     <view>
-      <text class='name'>{{user.userName}}</text>
+      <text class='name'>{{user.userName||rawData.nickName}}</text>
       <text class="remaining {{token?'display_b':''}}">{{user.wallet}} <text>元</text></text>
       <view class='wallet_box' bindtap='Withdraw'>
         <text class="wallet {{token?'display_b':''}}">钱包提现</text>
@@ -26,10 +26,24 @@
       </view>
     </view>
   </view>
-  <view class="wrap delivery" bindtap='myJob'>
-    <view class='flex-between align-center'>
+  <view class="wrap delivery">
+    <view class='flex-between align-center' bindtap='myJob'>
       <text>我的投递</text>
       <image class='arrow' src='/images/arrow_3.png' />
     </view>
   </view>
+  <view class="wrap delivery">
+    <view class='flex-between align-center'>
+      <button show-message-card='true' open-type="contact" class='service'>联系客服</button>
+      <text>联系客服</text>
+      <image class='arrow' src='/images/arrow_3.png' />
+    </view>
+  </view>
+  <view class="wrap delivery">
+    <view class='flex-between align-center' bindtap='quit'>
+      <text>退出登陆</text>
+      <image class='arrow' src='/images/arrow_3.png' />
+    </view>
+  </view>
+
 </view>

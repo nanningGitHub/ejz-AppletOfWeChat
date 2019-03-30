@@ -1,59 +1,58 @@
-<view class="container">
-  <view style='position: relative;width: 100%;'>
-    <ul class="select-content">
-      <li bindtap="selectSort" data-flag='flagJob' class="{{ flagJob == true ? 'select' : '' }}">
-        全部岗位
-        <span></span>
-      </li>
-      <li bindtap="selectSort" data-flag='flagSort' class="{{ flagSort == true ? 'select' : '' }}">
-        默认排序
-        <span></span>
-      </li>
-      <li bindtap="selectSort" data-flag='flagFilter' class="{{ flagFilter == true ? 'select' : '' }}">
-        筛选方式
-        <span></span>
+<view class='screen'>
+  <ul class="select-content">
+    <li bindtap="selectSort" data-flag='flagJob' class="{{ flagJob == true ? 'select' : '' }}">
+      全部岗位
+      <span></span>
+    </li>
+    <li bindtap="selectSort" data-flag='flagSort' class="{{ flagSort == true ? 'select' : '' }}">
+      默认排序
+      <span></span>
+    </li>
+    <li bindtap="selectSort" data-flag='flagFilter' class="{{ flagFilter == true ? 'select' : '' }}">
+      筛选方式
+      <span></span>
+    </li>
+  </ul>
+  <!-- 筛选条件开始 -->
+  <view class='job' wx:if='{{ flagJob==true }}'>
+    <ul class='all-job'>
+      <li class='{{item.flag?"select":""}}' wx:for='{{dataMap.jobTypeList}}' bindtap='JobTypeParent' data-value='{{item.value}}' data-childrenList='{{item.childrenList}}'>
+        {{item.key}}
       </li>
     </ul>
-    <!-- 筛选条件开始 -->
-    <view class='job' wx:if='{{ flagJob==true }}'>
-      <ul class='all-job'>
-        <li class='{{item.flag?"select":""}}' wx:for='{{dataMap.jobTypeList}}' bindtap='JobTypeParent' data-value='{{item.value}}' data-childrenList='{{item.childrenList}}'>
-          {{item.key}}
-        </li>
-      </ul>
-      <ul class='detail'>
-        <li class='{{item.flag?"select":""}}' wx:for='{{childrenList}}' data-value='{{item.value}}' bindtap='JobTypeChildren'>
-          {{item.key}}
-        </li>
-      </ul>
-    </view>
-    <view class='sort' wx:if='{{ flagSort==true }}'>
-      <ul>
-        <li wx:for='{{dataMap.sortTypeList}}' bindtap='SortTypeList' data-value='{{item.value}}'>
-          <a class='{{ item.flag?"select":""}}'>{{item.key}}</a>
-        </li>
-      </ul>
-    </view>
-    <view class='filter' wx:if='{{ flagFilter==true }}'>
-      <h3>工作区域</h3>
-      <ul>
-        <li wx:for='{{dataMap.cityList}}' bindtap='CityList' data-value='{{item.value}}'>
-          <a class='{{item.flag?"select":""}}'>{{item.key}}
-            <span style='display:none;' class='{{item.flag?"select":""}}'></span>
-          </a>
-        </li>
-      </ul>
-      <h3 style='margin-top: 40rpx;display: block;'>结算方式</h3>
-      <ul>
-        <li wx:for='{{dataMap.settlementList}}' bindtap='SettlementList' data-value='{{item.value}}'>
-          <a class='{{item.flag?"select":""}}'>{{item.key}}
-            <span style='display:none;' class='{{item.flag?"select":""}}'></span>
-          </a>
-        </li>
-      </ul>
+    <ul class='detail'>
+      <li class='{{item.flag?"select":""}}' wx:for='{{childrenList}}' data-value='{{item.value}}' bindtap='JobTypeChildren'>
+        {{item.key}}
+      </li>
+    </ul>
+  </view>
+  <view class='sort' wx:if='{{ flagSort==true }}'>
+    <ul>
+      <li wx:for='{{dataMap.sortTypeList}}' bindtap='SortTypeList' data-value='{{item.value}}'>
+        <a class='{{ item.flag?"select":""}}'>{{item.key}}</a>
+      </li>
+    </ul>
+  </view>
+  <view class='filter' wx:if='{{ flagFilter==true }}'>
+    <h3>工作区域</h3>
+    <ul>
+      <li wx:for='{{dataMap.cityList}}' bindtap='CityList' data-value='{{item.value}}'>
+        <a class='{{item.flag?"select":""}}'>{{item.key}}
+          <span style='display:none;' class='{{item.flag?"select":""}}'></span>
+        </a>
+      </li>
+    </ul>
+    <h3 style='margin-top: 40rpx;display: block;'>结算方式</h3>
+    <ul>
+      <li wx:for='{{dataMap.settlementList}}' bindtap='SettlementList' data-value='{{item.value}}'>
+        <a class='{{item.flag?"select":""}}'>{{item.key}}
+          <span style='display:none;' class='{{item.flag?"select":""}}'></span>
+        </a>
+      </li>
+    </ul>
 
-      <!-- 性别要求开始 -->
-      <!-- <h3 style='margin-top: 40rpx;display: block;'>性别要求</h3>
+    <!-- 性别要求开始 -->
+    <!-- <h3 style='margin-top: 40rpx;display: block;'>性别要求</h3>
       <radio-group class='radio-group' bindchange=''>
         <label class='radio' wx:for='{{ items }}' wx:key='{{ item.index }}'>
           <radio value='' checked='{{ item.checked }}'>
@@ -61,10 +60,10 @@
           </radio>
         </label>
       </radio-group> -->
-      <!-- 性别要求结束 -->
+    <!-- 性别要求结束 -->
 
-      <!-- 身份要求开始 -->
-      <!-- <h3 style='margin-top: 40rpx;display: block;'>身份要求</h3>
+    <!-- 身份要求开始 -->
+    <!-- <h3 style='margin-top: 40rpx;display: block;'>身份要求</h3>
       <radio-group class='radio-group' bindchange=''>
         <label class='radio' wx:for='{{ IDitems }}' wx:key='{{ item.index }}'>
           <radio value='' checked='{{ item.checked }}'>
@@ -72,20 +71,23 @@
           </radio>
         </label>
       </radio-group> -->
-      <!-- 身份要求结束 -->
+    <!-- 身份要求结束 -->
+    <view class='btn'>
+      <a bindtap='ClearSelect' class='reset'>重置</a>
+      <a bindtap='ConfirmSelect' class="confirm">确定</a>
+    </view>
+  </view>
+  <!-- 筛选条件结束 -->
+</view>
+<!-- 遮罩层开始 -->
+<view wx:if="{{flagJob||flagSort||flagFilter}}" class="shade">
+</view>
+<!-- 遮罩层结束 -->
 
-      <view class='btn'>
-        <a bindtap='ClearSelect' class='reset'>重置</a>
-        <a bindtap='ConfirmSelect' class="confirm">确定</a>
-      </view>
-    </view>
-    <!-- 筛选条件结束 -->
-    <!-- joblists开始 -->
-    <view class='wrap margin-wrap job-list'>
-      <view wx:for="{{jobOfflinePage.dataList}}" wx:key="{{item.id}}" data-item='{{item}}' bindtap="toJobDetail">
-        <job-item item="{{item}}"></job-item>
-      </view>
-    </view>
-    <!-- joblists结束 -->
+<!-- joblists开始 -->
+<view class='wrap margin-wrap joblist'>
+  <view wx:for="{{jobOfflinePage.dataList}}" wx:key="{{item.id}}" data-item='{{item}}' bindtap="toJobDetail">
+    <job-item item="{{item}}"></job-item>
   </view>
 </view>
+<!-- joblists结束 -->

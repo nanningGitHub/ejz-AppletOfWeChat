@@ -1,0 +1,10 @@
+<!--pages/manage/loginNew.wxml-->
+<image src='/images/logo.png' class='logo'></image>
+<image src='/images/logo_text.png' class='logoText'></image>
+<view class='button'>
+  <text>微信用户快速登录</text>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+</view>
+<view class='button button_bg' bindtap='intologin'>
+  <text>输入手机号登录 / 注册</text>
+</view>

@@ -1,0 +1,134 @@
+/* pages/wallet/withdrawDeposit/withdrawDeposit.wxss */
+
+page {
+  background-color: #f2f2f2;
+}
+
+.content {
+  width: 726rpx;
+  margin: auto;
+}
+
+.content .item {
+  position: relative;
+  width: 726rpx;
+  overflow: hidden;
+  margin-top: 16rpx;
+  height: 158rpx;
+}
+
+.item .select {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 64rpx;
+  right: 34rpx;
+}
+
+.item_content {
+  top: 0rpx;
+  left: 0rpx;
+  width: 726rpx;
+  height: 158rpx;
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+}
+
+.moveItem {
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+}
+
+.item_content .message {
+  width: 540rpx;
+}
+
+.item .bankloge {
+  margin-left: 42rpx;
+  margin-right: 44rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.bankName {
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.bankNumber {
+  color: #888;
+  font-size: 36rpx;
+}
+
+.item, .addCard {
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.addCard {
+  width: 726rpx;
+  height: 90rpx;
+  margin: 16rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.add_icon {
+  margin-left: 46rpx;
+  margin-right: 22rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.money {
+  margin-left: 48rpx;
+  margin-right: 24rpx;
+  width: 20rpx;
+  height: 27rpx;
+}
+
+.addText {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.into {
+  position: absolute;
+  right: 34rpx;
+  width: 12rpx;
+  height: 20rpx;
+}
+
+.money_input {
+  width: 540rpx;
+  font-size: 28rpx;
+}
+
+.color {
+  color: #888;
+}
+
+.allIn {
+  font-size: 28rpx;
+  color: #37d3cb;
+}
+
+.button {
+  margin: 84rpx auto 0rpx;
+  width: 634rpx;
+  height: 98rpx;
+  background-color: #37d3cb;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button text{
+  font-size: 30rpx;
+  color: #fefefe;
+}

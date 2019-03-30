@@ -7,6 +7,7 @@ view, navigator, button, input, textarea {
   -moz-box-sizing: border-box;
 }
 
+
 input, text {
   color: #333;
 }
@@ -72,7 +73,7 @@ radio {
 .flex-column-between {
   display: flex;
   flex-direction: column;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .align-center {

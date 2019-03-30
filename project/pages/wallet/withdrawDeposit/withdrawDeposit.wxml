@@ -1,0 +1,28 @@
+<!--pages/wallet/withdrawDeposit/withdrawDeposit.wxml-->
+<view class='content'>
+  <view class='item' wx:for="{{bankList}}" wx:key='{{index}}'>
+    <view class='item_content ' bindtap='bankId' data-bankId='{{item.id}}'>
+      <view class='moveItem'>
+        <image class='bankloge' src='../../../images/bank/{{item.message.bankloge}}.png '></image>
+        <view class='message '>
+          <text class='bankName '>{{item.message.bankName}}</text>
+          <text class='bankNumber '>**** **** **** {{item.bankNumber}}</text>
+        </view>
+      </view>
+    </view>
+    <image class='select' src='../../../images/wallet/{{item.type?"selected":"unselected"}}.png'></image>
+  </view>
+</view>
+<view class='addCard ' bindtap='intoBinding'>
+  <image src='../../../images/wallet/add_icon.png ' class='add_icon '></image>
+  <text class='addText '>添加银行卡</text>
+  <image src='../../../images/wallet/into.png ' class='into '></image>
+</view>
+<view class='addCard'>
+  <image src='../../../images/wallet/money.png ' class='money '></image>
+  <input type='digit' class='money_input' bindinput='moneyInput' value='{{txMoney}}' placeholder-class="color" placeholder='可提现到卡{{displayMoney}}元'></input>
+  <text class='allIn' bindtap='allIn'>全部</text>
+</view>
+<view class='button' bindtap='intoWithdrawalPassword'>
+  <text>确认提现</text>
+</view>

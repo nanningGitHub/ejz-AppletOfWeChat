@@ -1,0 +1,109 @@
+/* pages/wallet/card/card.wxss */
+
+page {
+  background-color: #f2f2f2;
+}
+
+.content {
+  width: 726rpx;
+  margin: auto;
+}
+
+.content .item {
+  position: relative;
+  width: 726rpx;
+  overflow: hidden;
+  margin-top: 16rpx;
+  height: 158rpx;
+}
+
+.item .moveleft {
+  left: -158rpx;
+}
+
+.delete {
+  height: 158rpx;
+  width: 158rpx;
+  background-color: #ff6978;
+}
+
+.delete text {
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 158rpx;
+  text-align: center;
+}
+
+.item_content {
+  transition: left 0.5s;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 884rpx;
+  height: 158rpx;
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+}
+
+.moveItem {
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+}
+
+.item_content .message {
+  width: 540rpx;
+}
+
+.item image {
+  margin-left: 42rpx;
+  margin-right: 44rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.bankName {
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.bankNumber {
+  color: #888;
+  font-size: 36rpx;
+}
+
+.item, .addCard {
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.addCard {
+  width: 726rpx;
+  height: 90rpx;
+  margin: 16rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.add_icon {
+  margin-left: 46rpx;
+  margin-right: 22rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.addText {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.into {
+  position: absolute;
+  right: 34rpx;
+  width: 12rpx;
+  height: 20rpx;
+}

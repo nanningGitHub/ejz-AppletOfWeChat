@@ -1,0 +1,20 @@
+<!--pages/wallet/amend/amend.wxml-->
+<view class='content'>
+  <view class='item'>
+    <text>旧密码</text>
+    <input value='' bindinput='oldPW' type='number' maxlength='6' password='ture' placeholder-class="color" placeholder='请输入旧的密码'></input>
+  </view>
+  <view class='line'></view>
+  <view class='item'>
+    <text>新密码</text>
+    <input value='' bindinput='newPW' type='number' maxlength='6' password='ture' placeholder-class="color" placeholder='请输入新的密码'></input>
+  </view>
+  <view class='line'></view>
+  <view class='item'>
+    <text>确认密码</text>
+    <input value='' bindinput='againNewPW' type='number' maxlength='6' password='ture' placeholder-class="color" placeholder='请确认新的密码'></input>
+  </view>
+</view>
+<view class='button' bindtap='modifyTXPassword'>
+  <text>确认修改</text>
+</view>

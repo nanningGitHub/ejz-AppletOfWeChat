@@ -1,0 +1,37 @@
+<!--pages/wallet/binding/binding.wxml-->
+<view class='content'>
+  <view class='item'>
+    <text>持卡人</text>
+    <input disabled='{{forbid}}' value='' bindinput='name' type='text' placeholder-class="color" placeholder='请输入持卡人姓名'></input>
+  </view>
+  <view class='line'></view>
+  <view class='item'>
+    <text>身份证号</text>
+    <input disabled='{{forbid}}' value='' bindinput='cardNumber' type='idcard' placeholder-class="color" placeholder='请输入身份证号'></input>
+  </view>
+  <view class='line'></view>
+  <view class='item'>
+    <text>开户银行</text>
+    <picker disabled='{{forbid}}' bindchange="bindPickerChange" value="{{index}}" range="{{banklist}}" range-key="name">{{creditCardNumbers}}</picker>
+    <image class='into' src='../../../images/wallet/into.png'></image>
+  </view>
+  <view class='line'></view>
+  <view class='item'>
+    <text>银行卡号</text>
+    <input disabled='{{forbid}}' value='' bindinput='bankNumber' type='number' placeholder-class="color" placeholder='请输入银行卡号'></input>
+  </view>
+  <view class='line'></view>
+  <view class='item'>
+    <text>手机号</text>
+    <input disabled='{{forbid}}' value='' bindinput='phoneNumber' type='number' placeholder-class="color" placeholder='请驶入银行预留手机号'></input>
+  </view>
+  <view class='line'></view>
+  <view class='item'>
+    <text>验证码</text>
+    <input value='' bindinput='validateCode' type='number' maxlength='6' placeholder-class="color" placeholder='请输入验证码'></input>
+    <text class='get' disabled='{{disabled}}' bindtap='getSendMesCode'>{{code}}</text>
+  </view>
+</view>
+<view class='button' bindtap='AddToComplete'>
+  <text>完成添加</text>
+</view>

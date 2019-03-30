@@ -32,7 +32,107 @@ Page({
         url: 'nav_4',
         type: 'practice'
       }
-    ]
+    ],
+    code: '',
+    vi: '',
+    encryptedData: ''
+  },
+  onShow: function() {
+    const token = wx.getStorageSync('token');
+    if (token) {
+      wx.getSetting({
+        success(res) {
+          if (res.authSetting['scope.userInfo']) {
+            // 必须是在用户已经授权的情况下调用
+            wx.getUserInfo({
+              success(res) {
+                wx.setStorageSync('rawData', res.rawData)
+              }
+            })
+          } else {
+            const rawData = wx.getStorageSync('rawData');
+            if (!rawData) {
+              wx.redirectTo({
+                url: '/pages/manage/userinfo/userinfo'
+              })
+            }
+          }
+        }
+      })
+    } else {
+      wx.redirectTo({
+        url: '/pages/manage/loginNew/loginNew'
+      })
+    }
+    var that = this;
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.userLocation']) {
+          wx.authorize({
+            scope: 'scope.userLocation',
+            success() {
+              wx.getLocation({ //获取地理位置
+                type: 'wgs84',
+                success: res => {
+                  var latitude = res.latitude
+                  var longitude = res.longitude
+                  var speed = res.speed
+                  var accuracy = res.accuracy
+                  app.globalData.location = res
+                  that.loadCity(longitude, latitude)
+                }
+              })
+            },
+            fail() {
+              wx.showModal({
+                title: '提示',
+                content: '请进行位置授权',
+                success(res) {
+                  if (res.confirm) {
+                    that.openSetting()
+                  } else if (res.cancel) {
+                    that.getIndexList()
+                  }
+                }
+              })
+            }
+          })
+        } else {
+          wx.getLocation({ //获取地理位置
+            type: 'wgs84',
+            success: res => {
+              var latitude = res.latitude
+              var longitude = res.longitude
+              var speed = res.speed
+              var accuracy = res.accuracy
+              app.globalData.location = res
+              that.loadCity(longitude, latitude)
+            }
+          })
+        }
+      }
+    })
+    // //判断用户是否授权地理位置
+    // wx.getSetting({
+    //   success(res) {
+    //     if (!res.authSetting['scope.userInfo']) {
+    //       // 必须是在用户已经授权的情况下调用
+    //       wx.getLocation({ //获取地理位置
+    //         type: 'wgs84',
+    //         altitude: true,
+    //         success: res => {
+    //           var latitude = res.latitude
+    //           var longitude = res.longitude
+    //           var speed = res.speed
+    //           var accuracy = res.accuracy
+    //           app.globalData.location = res
+    //           this.loadCity(longitude, latitude)
+    //         }
+    //       })
+    //     } else {
+    //     }
+    //   }
+    // })
   },
   toJobDetail: function(event) {
     let item = event.currentTarget.dataset.item
@@ -51,12 +151,12 @@ Page({
       }
     })
   },
-  getCityId: function(city) {      //
+  getCityId: function(city) { //
     wxRequest.getRequest('api/city/getCity.do', {
         cityName: city
       })
       .then(res => {
-        app.globalData.cityId = res.dataMap.cityId
+        app.globalData.cityId = res.dataMap.cityId;
         return res
       })
       .then(res => {
@@ -80,7 +180,7 @@ Page({
           item.endWorkTime = Utils.getTime(item.endDate)
         })
         this.setData({
-          bannerList: res.dataMap.bannerList,
+          // bannerList: res.dataMap.bannerList,
           messageList: res.dataMap.messageList,
           jobList: jobList
         })
@@ -99,33 +199,30 @@ Page({
       fail() {}
     }
   },
-  onLoad: function() {
-    wx.getLocation({ //获取地理位置
-        type: 'wgs84',
-        success: res => {
-          var latitude = res.latitude
-          var longitude = res.longitude
-          var speed = res.speed
-          var accuracy = res.accuracy
-          app.globalData.location = res
-          this.loadCity(longitude, latitude)
+  openSetting() {
+    var that = this;
+    wx.openSetting({
+      success(res) {
+        if (res.authSetting['scope.userLocation']) {
+          wx.getLocation({ //获取地理位置
+            type: 'wgs84',
+            success: res => {
+              var latitude = res.latitude
+              var longitude = res.longitude
+              var speed = res.speed
+              var accuracy = res.accuracy
+              app.globalData.location = res
+              that.loadCity(longitude, latitude)
+            }
+          })
+        } else {
+          that.getIndexList()
         }
-      }),
-      wx.login({ //获取登录凭证
-        success(res) {
-          console.log(res)
-          // wxRequest.getRequest('', {          //向后台传送code
+      },
+      fail() {
 
-          //   })
-          //   .then(res => {
+      }
+    })
+  },
 
-          //   })
-          //   .then(res => {
-
-          //   })
-        },
-        fail() {},
-        complete() {}
-      })
-  }
 })

@@ -1,0 +1,42 @@
+/* pages/wallet/BindingSuccess/BindingSuccess.wxss */
+
+page {
+  background-color: #f2f2f2;
+}
+
+.content {
+  margin: 16rpx auto 0rpx;
+  width: 726rpx;
+  height: 394rpx;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.content image {
+  width: 216rpx;
+  height: 230rpx;
+  margin: 54rpx auto 0rpx;
+}
+
+.content text {
+  text-align: center;
+  font-size: 24rpx;
+  color: #888;
+  margin-top: 20rpx;
+}
+
+.return {
+  margin: 282rpx auto 0rpx;
+  width: 634rpx;
+  height: 98rpx;
+  background-color: #37d3cb;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.return text {
+  font-size: 30rpx;
+  color: #fff;
+}
