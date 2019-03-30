@@ -1,6 +1,4 @@
 const Promise = require("../plugins/es6-promise.js")
-const openUrl = "https://openapi.ejzhi.com/"
-// const openUrl = "http://localtestapi.ejzhi.com/"
 // const openUrl = "http://192.168.0.108:8080/"
 // const app = getApp()
 
