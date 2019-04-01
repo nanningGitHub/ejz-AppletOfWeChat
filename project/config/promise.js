@@ -1,5 +1,5 @@
 const Promise = require("../plugins/es6-promise.js")
-// const openUrl = "http://192.168.0.108:8080/"
+const openUrl = "http://192.168.0.108:8080/"  //后台地址
 // const app = getApp()
 
 function wxPromisify(fn) {
