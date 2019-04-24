@@ -90,14 +90,17 @@ Page({
     provinceId: '',
     provinceData: [],
     provinceIndex: '',
+
     city: '请选择',
     cityId: '',
     cityData: [],
     cityIndex: '',
+
     area: '请选择',
     areaId: '',
     areaData: [],
     areaIndex: '',
+
     email: '',
     qq: '',
     mobile: '',
@@ -308,7 +311,9 @@ Page({
       })
     })
   },
-  choosePortrait: function() { //上传头像oss
+
+  // 上传头像oss开始
+  choosePortrait: function() {
     let self = this;
     wx.chooseImage({
       count: 1,
@@ -327,6 +332,8 @@ Page({
       }
     })
   },
+  // 上传头像oss结束
+
   degreeChange: function(e) {
     this.setData({
       degree: this.data.degreeData[e.detail.value],
@@ -432,86 +439,83 @@ Page({
       areaIndex: e.detail.value
     })
   },
-  formSubmit: function(e) { //提交表单
+
+  // 提交表单开始
+  formSubmit: function(e) {
     var self = this
     if (e.detail.value.realName == "") {
-      wx.showModal({
-        title: '错误',
-        content: '用户名不能为空',
-        showCancel: false
+      wx.showToast({
+        title: '用户名不能为空',
+        icon: 'none'
       })
       return false
     } else if (e.detail.value.birthday == "") {
-      wx.showModal({
-        title: '错误',
-        content: '出生年月不能为空',
-        showCancel: false
+      wx.showToast({
+        title: '出生年月不能为空',
+        icon: 'none'
       })
       return false
     } else if (e.detail.value.school == "") {
-      wx.showModal({
-        title: '错误',
-        content: '就读学校不能为空',
-        showCancel: false
+      wx.showToast({
+        title: '就读学校不能为空',
+        icon: 'none'
       })
       return false
     } else if (e.detail.value.startSchool == "") {
-      wx.showModal({
-        title: '错误',
-        content: '入学时间不能为空',
-        showCancel: false
+      wx.showToast({
+        title: '入学时间不能为空',
+        icon: 'none'
       })
       return false
     } else if (e.detail.value.degree == "") {
-      wx.showModal({
-        title: '错误',
-        content: '请选择学历',
-        showCancel: false
+      wx.showToast({
+        title: '请选择学历',
+        icon: 'none'
       })
       return false
     } else if (e.detail.value.profession == "") {
-      wx.showModal({
-        title: '错误',
-        content: '专业不能为空',
-        showCancel: false
+      wx.showToast({
+        title: '专业不能为空',
+        icon: 'none'
       })
       return false
     } else if (e.detail.value.intent.length == 0) {
-      wx.showModal({
-        title: '错误',
-        content: '请选择您的期望职位',
-        showCancel: false
+      wx.showToast({
+        title: '请选择您的期望职位',
+        icon: 'none'
       })
       return false
-    } else if (e.detail.value.province == "") {
-      wx.showModal({
-        title: '错误',
-        content: '请选择省',
-        showCancel: false
+    } else if (this.data.provinceId == "") {
+      wx.showToast({
+        title: '请选择省',
+        icon: 'none'
       })
       return false
-    } else if (e.detail.value.city == "") {
-      wx.showModal({
-        title: '错误',
-        content: '请选择市',
-        showCancel: false
+    } else if (this.data.cityId == "") {
+      wx.showToast({
+        title: '请选择市',
+        icon: 'none'
       })
       return false
-    } else if (e.detail.value.area == "") {
-      wx.showModal({
-        title: '错误',
-        content: '请选择地区',
-        showCancel: false
+    } else if (this.data.areaId == "") {
+      wx.showToast({
+        title: '请选择地区',
+        icon: 'none'
       })
       return false
-    } else if (!(/^1[3|4|5|7|8]\d{9}$/.test(e.detail.value.mobile))) {
-      wx.showModal({
-        title: '错误',
-        content: '手机号格式不正确',
-        showCancel: false
+    } else if (!(/^1[3|4|5|6|7|8]\d{9}$/.test(e.detail.value.mobile))) {
+      wx.showToast({
+        title: '手机号格式不正确',
+        icon: 'none'
       })
       return false
     }
+    this.editUserInfo(e);
+  },
+  //提交表单结束
+
+  // 编辑简历开始
+  editUserInfo(e) {
     wxRequest.postRequest('api/user/editUserInfo.do', {
         token: app.globalData.token,
         provinceId: this.data.provinceId,
@@ -543,10 +547,9 @@ Page({
         })
       })
       .then(res => {
-        wx.navigateTo({
-          url: '../lifePhoto/lifePhoto?userResume=' + JSON.stringify(this.data.userResume)
-        })
+        wx.navigateBack({})
       })
-  },
+  }
+  // 编辑简历结束
 
 })

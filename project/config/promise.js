@@ -1,5 +1,7 @@
 const Promise = require("../plugins/es6-promise.js")
-const openUrl = "http://192.168.0.108:8080/"  //后台地址
+// const openUrl = "https://openapi.ejzhi.com/"      //线上地址
+const openUrl = "http://localtestapi.ejzhi.com/" //测试地址
+// const openUrl = "http://192.168.0.107:8081/" //后台地址
 // const app = getApp()
 
 function wxPromisify(fn) {
@@ -41,13 +43,19 @@ Promise.prototype.finally = function(callback) {
  * data 以对象的格式传入
  */
 function getRequest(url, data) {
+  console.log()
   var getRequest = wxPromisify(wx.request)
   return getRequest({
     url: openUrl + url,
     method: 'GET',
-    data: data,
+    data: {
+      ...data,
+      ...{
+        'weChatTag': 1
+      }
+    },
     header: {
-      'Content-Type': 'application/json',
+      'content-type': 'application/x-www-form-urlencoded',
     }
   })
 }
@@ -62,14 +70,20 @@ function postRequest(url, data) {
   return postRequest({
     url: openUrl + url,
     method: 'POST',
-    data: data,
+    data: {
+      ...data,
+      ...{
+        'weChatTag': 1
+      }
+    },
     header: {
-      "content-type": "application/x-www-form-urlencoded"
+      'content-type': 'application/x-www-form-urlencoded',
     },
   })
 }
 
 module.exports = {
   postRequest: postRequest,
-  getRequest: getRequest
+  getRequest: getRequest,
+  openUrl: openUrl
 }

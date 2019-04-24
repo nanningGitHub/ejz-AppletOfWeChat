@@ -6,90 +6,110 @@ Page({
   /**
    * 页面的初始数据
    */
-  init: {
-    isGet: true,
-    page: 1,
-    option: {}
-  },
   data: {
-    jobList: []
+    prefectureId: '',
+    mainJobType: '',
+    searchkey: '',
+    dataList: [],
+    pageNo: 1,
+    goType: ''
   },
-  getBaseList: function(options) {
-    if (!this.init.isGet) return
-    wxRequest.getRequest('api/job/offline/getList.do', {
+  // 获取专区的joblist开始
+  getprejobList() {
+    wxRequest.getRequest("api/home/getprejobList.do", {
         cityId: app.globalData.cityId,
-        latitude: options.type === 'near' && app.globalData.location.latitude || '',
-        longitude: options.type === 'near' && app.globalData.location.longitude || '',
-        settlementType: options.type === 'date' && 1 || '',
-        subJobType: options.type === 'practice' && options.job || '',
-        searchkey: options.searchkey && options.searchkey || '',
-        pageNo: this.init.page
+        prefecture_id: this.data.prefectureId,
+        pageSize: 20,
+        pageNo: this.data.pageNo
       })
       .then(res => {
-        let jobList = this.data.jobList
-        jobList = jobList.concat(res.dataMap.jobOfflinePage.dataList)
-        jobList.map(item => {
+        let oldDataList = this.data.dataList;
+        let dataList = res.dataMap.page.dataList;
+        dataList.map(item => {
+          item.jobOffline.startTime = Utils.getLocalTime(item.jobOffline.startDate)
+          item.jobOffline.endTime = Utils.getLocalTime(item.jobOffline.endDate)
+          item.jobOffline.lastFreshTime = Utils.getLocalTime(item.jobOffline.lastFreshDate)
+          item.jobOffline.startWorkTime = Utils.getTime(item.jobOffline.startDate)
+          item.jobOffline.endWorkTime = Utils.getTime(item.jobOffline.endDate)
+        })
+        this.setData({
+          dataList: [...oldDataList, ...dataList]
+        })
+      })
+  },
+  // 获取专区的joblist结束
+
+
+  // 获取兼职主类型joblist开始
+  getList() {
+    wxRequest.getRequest("api/job/offline/getList.do", {
+        cityId: app.globalData.cityId,
+        mainJobType: this.data.mainJobType,
+        searchkey: this.data.searchkey,
+        pageSize: 20,
+        pageNo: this.data.pageNo
+      })
+      .then(res => {
+        let oldDataList = this.data.dataList;
+        let dataList = res.dataMap.jobOfflinePage.dataList;
+        dataList.map(item => {
           item.startTime = Utils.getLocalTime(item.startDate)
           item.endTime = Utils.getLocalTime(item.endDate)
           item.lastFreshTime = Utils.getLocalTime(item.lastFreshDate)
           item.startWorkTime = Utils.getTime(item.startDate)
           item.endWorkTime = Utils.getTime(item.endDate)
-          item.image = Utils.imgLogo(item.jobSubtypeId)
         })
         this.setData({
-          jobList: jobList
-        }, () => {
-          if (this.init.page < res.dataMap.jobOfflinePage.totalPage) this.init.page++
-            else this.init.isGet = false
+          dataList: [...oldDataList, ...dataList]
         })
       })
   },
-  getList: function() {
-    if (!this.init.isGet) return
-    wxRequest.getRequest('api/job/offline/getHighSalaryList.do', {
-        cityId: app.globalData.cityId,
-        pageNo: this.init.page
-      })
-      .then(res => {
-        let jobList = this.data.jobList
-        jobList = jobList.concat(res.dataMap.jobOfflinePage.dataList)
-        jobList.map(item => {
-          item.startTime = Utils.getLocalTime(item.startDate)
-          item.endTime = Utils.getLocalTime(item.endDate)
-          item.lastFreshTime = Utils.getLocalTime(item.lastFreshDate)
-          item.startWorkTime = Utils.getTime(item.startDate)
-          item.endWorkTime = Utils.getTime(item.endDate)
-          item.image = Utils.imgLogo(item.jobSubtypeId)
-        })
-        this.setData({
-          jobList: jobList
-        }, () => {
-          if (this.init.page < res.dataMap.jobOfflinePage.totalPage) this.init.page++
-            else this.init.isGet = false
-        })
-      })
-  },
-  toJobDetail: function(event) {
-    let item = event.currentTarget.dataset.item
+
+  // 点击岗位进入详情页 开始
+  toJobDetail: function (event) {
+    let JobOfflineId = event.currentTarget.dataset.jobofflineid;
     wx.navigateTo({
-      url: '/pages/job/detail/detail?jobData=' + JSON.stringify(item)
+      url: '/pages/job/detail/detail?JobOfflineId=' + JobOfflineId + '&cityId=' + app.globalData.cityId
     })
   },
+  // 点击岗位进入详情页 结束
+
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.init.option = options
-    if (options.type !== 'high')
-      this.getBaseList(options)
-    else this.getList()
+    if (options.goType == 4) {
+      this.setData({
+        goType: options.goType,
+        prefectureId: options.prefectureId,
+      })
+    } else if (options.goType == 5) {
+      this.setData({
+        goType: options.goType,
+        mainJobType: options.mainJobType,
+      })
+    }
+    if (options.searchkey) {
+      this.setData({
+        searchkey: options.searchkey
+      })
+    }
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    if (this.data.goType == 4) {
+      this.getprejobList()
+    } else if (this.data.goType == 5) {
+      this.getList()
+    }
+    if (this.data.searchkey) {
+      this.getList()
+    }
   },
 
   /**
@@ -123,9 +143,22 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
-    if (this.init.option.type !== 'high') this.getBaseList(this.init.option)
-    else this.getList()
+  onReachBottom() {
+    let pageNo = this.data.pageNo;
+    pageNo++;
+    this.setData({
+      pageNo: pageNo
+    })
+    if (this.data.goType == 4) {
+      this.getprejobList()
+    } else if (this.data.goType == 5) {
+      this.getList()
+    }
+
+    if (this.data.searchkey) {
+      this.getList()
+    }
+
   },
 
   /**

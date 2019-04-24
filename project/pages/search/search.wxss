@@ -35,6 +35,11 @@
   text-align: left;
 }
 
+.input_box_placeholde {
+  font-size: 22rpx;
+  color: #aaa;
+}
+
 .cancel {
   font-size: 26rpx;
   color: #37d3cb;
@@ -73,3 +78,34 @@
 .guess_search_item:nth-child(4n) {
   margin-right: 0;
 }
+
+/* 搜索历史开始 */
+
+.history_title_text {
+  font-size: 24rpx;
+  color: #333;
+  text-align: left;
+  margin-bottom: 24rpx;
+}
+
+.delete_icon {
+  height: 22rpx;
+  width: 22rpx;
+  margin-right: 8rpx;
+}
+
+.historyItem {
+  margin-right: 26rpx;
+  margin-bottom: 26rpx;
+  height: 44rpx;
+  text-align: center;
+  line-height: 44rpx;
+  padding: 0 24rpx;
+  display: inline-block;
+  border-radius: 6rpx;
+  background-color: #f2f2f2;
+  color: #666;
+  font-size: 24rpx;
+}
+
+/* 搜索历史结束 */

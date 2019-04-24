@@ -11,7 +11,7 @@ Page({
     code: '获取验证码',
     banklist: [],
     creditCardNumbers: '请选择开户银行',
-    token: app.globalData.token,
+    token: "",
     name: '',
     cardNumber: '',
     bankTypeId: '',
@@ -53,14 +53,46 @@ Page({
   },
   getSendMesCode() {
     if (this.data.disabled) {
-      this.sendMes();
+      if (!this.data.token) {
+        wx.showToast({
+          icon: 'none',
+          title: '请登录',
+        })
+      } else if (!this.data.name) {
+        wx.showToast({
+          icon: 'none',
+          title: '请输入持卡人姓名',
+        })
+      } else if (!this.data.cardNumber) {
+        wx.showToast({
+          icon: 'none',
+          title: '请输入身份证号',
+        })
+      } else if (!this.data.bankTypeId) {
+        wx.showToast({
+          icon: 'none',
+          title: '请选择开户银行',
+        })
+      } else if (!this.data.bankNumber) {
+        wx.showToast({
+          icon: 'none',
+          title: '请输入银行卡号',
+        })
+      } else if (!this.data.phoneNumber) {
+        wx.showToast({
+          icon: 'none',
+          title: '请输入银行预留手机号',
+        })
+      } else {
+        this.sendMes();
+      }
     } else {
 
     }
   },
   sendMes() {
     wxRequest.postRequest('api/user/sendMes.do', {
-        token: app.globalData.token,
+        token: this.data.token,
         name: this.data.name,
         card_number: this.data.cardNumber,
         bankTypeId: this.data.bankTypeId,
@@ -101,24 +133,59 @@ Page({
     let AddToCompleteType = true;
     if (AddToCompleteType) {
       AddToCompleteType = false;
-      console.log(1)
-      wxRequest.postRequest('api/user/bandBank.do', {
-          token: app.globalData.token,
-          name: this.data.name,
-          card_number: this.data.cardNumber,
-          bankTypeId: this.data.bankTypeId,
-          bank_number: this.data.bankNumber,
-          phone_number: this.data.phoneNumber,
-          msgCode: this.data.msgCode
+      if (!this.data.token) {
+        wx.showToast({
+          icon: 'none',
+          title: '请登录',
         })
-        .then(res => {
-          AddToCompleteType = true;
-          wx.redirectTo({
-            url: '/pages/wallet/BindingSuccess/BindingSuccess'
+      } else if (!this.data.name) {
+        wx.showToast({
+          icon: 'none',
+          title: '请输入持卡人姓名',
+        })
+      } else if (!this.data.cardNumber) {
+        wx.showToast({
+          icon: 'none',
+          title: '请输入身份证号',
+        })
+      } else if (!this.data.bankTypeId) {
+        wx.showToast({
+          icon: 'none',
+          title: '请选择开户银行',
+        })
+      } else if (!this.data.bankNumber) {
+        wx.showToast({
+          icon: 'none',
+          title: '请输入银行卡号',
+        })
+      } else if (!this.data.phoneNumber) {
+        wx.showToast({
+          icon: 'none',
+          title: '请输入银行预留手机号',
+        })
+      } else if (!this.data.msgCode) {
+        wx.showToast({
+          icon: 'none',
+          title: '请输入验证码',
+        })
+      } else {
+        wxRequest.postRequest('api/user/bandBank.do', {
+            token: this.data.token,
+            name: this.data.name,
+            card_number: this.data.cardNumber,
+            bankTypeId: this.data.bankTypeId,
+            bank_number: this.data.bankNumber,
+            phone_number: this.data.phoneNumber,
+            msgCode: this.data.msgCode
           })
-        })
+          .then(res => {
+            AddToCompleteType = true;
+            wx.redirectTo({
+              url: '/pages/wallet/BindingSuccess/BindingSuccess'
+            })
+          })
+      }
     }
-
   },
   /**
    * 生命周期函数--监听页面加载
@@ -143,7 +210,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.setData({
+      token: app.globalData.token
+    })
   },
 
   /**

@@ -18,23 +18,23 @@ Page({
   page3: 1,
   page4: 1,
   page5: 1,
-  scrollTo: function (e) {
+  scrollTo: function(e) {
     this.setData({
       slider: e.target.dataset.index,
       navLeft: e.target.offsetLeft
     })
   },
-  onReachBottom: function () {
+  onReachBottom: function() {
     var self = this
     switch (this.data.slider) {
       case 0:
         this.page1 += 1
-        MyJob.getJobOfflineList(app.globalData.token, this.page1, function (data) {
-          var jobData = data.dataMap.jobOfflinePage
+        MyJob.getJobOfflineList(app.globalData.token, this.page1, function(data) {
+          let jobData = data.dataMap.jobOfflinePage;
           if (jobData) {
-            for (var i = 0; i < jobData.length; i++) {
-              jobData[i].solrJobOffline.image = Utils.imgLogo(jobData[i].solrJobOffline.jobSubtypeId)
-            }
+            jobData.map(item => {
+              item.solrJobOffline.startDate = Utils.getLocalTime(item.solrJobOffline.startDate)
+            })
             self.setData({
               jobOfflineList: self.data.jobOfflineList.concat(jobData)
             })
@@ -43,12 +43,12 @@ Page({
         break
       case 1:
         this.page2 += 1
-        MyJob.getDaiLuYongList(app.globalData.token, this.page2, function (data) {
-          var jobData = data.dataMap.jobOfflinePage
+        MyJob.getDaiLuYongList(app.globalData.token, this.page2, function(data) {
+          let jobData = data.dataMap.jobOfflinePage
           if (jobData) {
-            for (var i = 0; i < jobData.length; i++) {
-              jobData[i].solrJobOffline.image = Utils.imgLogo(jobData[i].solrJobOffline.jobSubtypeId)
-            }
+            jobData.map(item => {
+              item.solrJobOffline.startDate = Utils.getLocalTime(item.solrJobOffline.startDate)
+            })
             self.setData({
               dailuyongList: self.data.dailuyongList.concat(jobData)
             })
@@ -57,12 +57,12 @@ Page({
         break
       case 2:
         this.page3 += 1
-        MyJob.getDaiShangGangList(app.globalData.token, this.page3, function (data) {
-          var jobData = data.dataMap.jobOfflinePage
+        MyJob.getDaiShangGangList(app.globalData.token, this.page3, function(data) {
+          let jobData = data.dataMap.jobOfflinePage
           if (jobData) {
-            for (var i = 0; i < jobData.length; i++) {
-              jobData[i].solrJobOffline.image = Utils.imgLogo(jobData[i].solrJobOffline.jobSubtypeId)
-            }
+            jobData.map(item => {
+              item.solrJobOffline.startDate = Utils.getLocalTime(item.solrJobOffline.startDate)
+            })
             self.setData({
               daiShangGangList: self.data.daiShangGangList.concat(jobData)
             })
@@ -71,12 +71,12 @@ Page({
         break
       case 3:
         this.page4 += 1
-        MyJob.getDaiJieSuanList(app.globalData.token, this.page4, function (data) {
-          var jobData = data.dataMap.jobOfflinePage
+        MyJob.getDaiJieSuanList(app.globalData.token, this.page4, function(data) {
+          let jobData = data.dataMap.jobOfflinePage
           if (jobData) {
-            for (var i = 0; i < jobData.length; i++) {
-              jobData[i].solrJobOffline.image = Utils.imgLogo(jobData[i].solrJobOffline.jobSubtypeId)
-            }
+            jobData.map(item => {
+              item.solrJobOffline.startDate = Utils.getLocalTime(item.solrJobOffline.startDate)
+            })
             self.setData({
               daiJieSuanList: self.data.daiJieSuanList.concat(jobData)
             })
@@ -85,12 +85,12 @@ Page({
         break
       case 4:
         this.page5 += 1
-        MyJob.getYiJieSuanList(app.globalData.token, this.page5, function (data) {
-          var jobData = data.dataMap.jobOfflinePage
+        MyJob.getYiJieSuanList(app.globalData.token, this.page5, function(data) {
+          let jobData = data.dataMap.jobOfflinePage
           if (jobData) {
-            for (var i = 0; i < jobData.length; i++) {
-              jobData[i].solrJobOffline.image = Utils.imgLogo(jobData[i].solrJobOffline.jobSubtypeId)
-            }
+            jobData.map(item => {
+              item.solrJobOffline.startDate = Utils.getLocalTime(item.solrJobOffline.startDate)
+            })
             self.setData({
               yiJieSuanList: self.data.yiJieSuanList.concat(jobData)
             })
@@ -99,16 +99,16 @@ Page({
         break
     }
   },
-  getJobOfflineList: function (page) { //全部
+  getJobOfflineList: function(page) { //全部
     wxRequest.getRequest('api/jobRequest/getJobOfflineList.do', {
-      token: app.globalData.token,
-      page: page
-    })
+        token: app.globalData.token,
+        page: page
+      })
       .then(res => {
-        let job = res.dataMap.jobOfflinePage
+        let job = res.dataMap.jobOfflinePage;
         if (job) {
           job.map(item => {
-            item.solrJobOffline.image = Utils.imgLogo(item.solrJobOffline.jobSubtypeId)
+            item.solrJobOffline.startDate = Utils.getLocalTime(item.solrJobOffline.startDate)
           })
         }
         this.setData({
@@ -116,16 +116,16 @@ Page({
         })
       })
   },
-  getDaiLuYongList: function (page) { // 待录用
+  getDaiLuYongList: function(page) { // 待录用
     wxRequest.getRequest('api/jobRequest/getDaiLuYongList.do', {
-      token: app.globalData.token,
-      page: page
-    })
+        token: app.globalData.token,
+        page: page
+      })
       .then(res => {
-        let job = res.dataMap.jobOfflinePage
+        let job = res.dataMap.jobOfflinePage;
         if (job) {
           job.map(item => {
-            item.solrJobOffline.image = Utils.imgLogo(item.solrJobOffline.jobSubtypeId)
+            item.solrJobOffline.startDate = Utils.getLocalTime(item.solrJobOffline.startDate)
           })
         }
         this.setData({
@@ -133,16 +133,16 @@ Page({
         })
       })
   },
-  getDaiShangGangList: function (page) { // 待上岗
+  getDaiShangGangList: function(page) { // 待上岗
     wxRequest.getRequest('api/jobRequest/getDaiShangGangList.do', {
-      token: app.globalData.token,
-      page: page
-    })
+        token: app.globalData.token,
+        page: page
+      })
       .then(res => {
-        let job = res.dataMap.jobOfflinePage
+        let job = res.dataMap.jobOfflinePage;
         if (job) {
           job.map(item => {
-            item.solrJobOffline.image = Utils.imgLogo(item.solrJobOffline.jobSubtypeId)
+            item.solrJobOffline.startDate = Utils.getLocalTime(item.solrJobOffline.startDate)
           })
         }
         this.setData({
@@ -150,16 +150,16 @@ Page({
         })
       })
   },
-  getDaiJieSuanList: function (page) { // 待结算
+  getDaiJieSuanList: function(page) { // 待结算
     wxRequest.getRequest('api/jobRequest/getDaiJieSuanList.do', {
-      token: app.globalData.token,
-      page: page
-    })
+        token: app.globalData.token,
+        page: page
+      })
       .then(res => {
-        let job = res.dataMap.jobOfflinePage
+        let job = res.dataMap.jobOfflinePage;
         if (job) {
           job.map(item => {
-            item.solrJobOffline.image = Utils.imgLogo(item.solrJobOffline.jobSubtypeId)
+            item.solrJobOffline.startDate = Utils.getLocalTime(item.solrJobOffline.startDate)
           })
         }
         this.setData({
@@ -167,52 +167,66 @@ Page({
         })
       })
   },
-  getYiJieSuanList: function (page) { // 已结算
+  getYiJieSuanList: function(page) { // 已结算
     wxRequest.getRequest('api/jobRequest/getYiJieSuanList.do', {
-      token: app.globalData.token,
-      page: page
-    })
+        token: app.globalData.token,
+        page: page
+      })
       .then(res => {
-        let job = res.dataMap.jobOfflinePage
+        let job = res.dataMap.jobOfflinePage;
         if (job) {
           job.map(item => {
-            item.solrJobOffline.image = Utils.imgLogo(item.solrJobOffline.jobSubtypeId)
+            item.solrJobOffline.startDate = Utils.getLocalTime(item.solrJobOffline.startDate)
           })
         }
         this.setData({
-          daiJieSuanList: job || []
+          yiJieSuanList: job || []
         })
       })
   },
-  deldeliverResume: function (event) { // 取消投递
+  // 取消投递提示框判断开始
+  isDeldeliverResume(event) {
+    let that = this;
+    wx.showModal({
+      title: '提示',
+      content: "您是否要取消投递",
+      success(res) {
+        if (res.confirm) {
+          that.deldeliverResume(event)
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+
+  // 取消投递提示框判断结束
+
+  deldeliverResume: function(event) { // 取消投递
     let id = event.currentTarget.dataset.id
     wxRequest.getRequest('api/job/offline/deldeliverResume.do', {
-      token: app.globalData.token,
-      jobOfflineId: id
-    })
+        token: app.globalData.token,
+        jobOfflineId: id
+      })
       .then(res => {
-        wx.showToast({
-          title: '取消投递成功',
-          icon: 'none'
+        wx.showLoading({
+          icon: 'loading',
         })
         setTimeout(() => {
           this.getDaiLuYongList(1)
           this.getJobOfflineList(1)
-        }, 2000)
+          wx.hideLoading()
+        }, 500)
       })
   },
-  contactEnterprise: function (e) { //联系企业
+  contactEnterprise: function(e) { //联系企业
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.mobile
     })
   },
-  toDetail: function (e) {
-    var jobId = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '../myJobDetail/myJobDetail?jobId=' + jobId
-    })
-  },
-  onLoad: function (options) {
+
+  onLoad: function(options) {
     this.getJobOfflineList(this.page1)
     this.getDaiLuYongList(this.page2)
     this.getDaiShangGangList(this.page3)

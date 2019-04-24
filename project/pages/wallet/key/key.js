@@ -30,13 +30,32 @@ Page({
     })
   },
   sendFindTxPWSMS() {
+    if (!this.data.phoneNumber) {
+      wx.showToast({
+        icon: 'none',
+        title: '请输入手机号',
+      })
+      return
+    }
     if (this.data.disabled) {
-      this.goGetCode();
       this.getSMS();
     } else {
 
     }
 
+  },
+  getSMS() {
+    wxRequest.getRequest('api/user/sendFindTxPWSMS.do', {
+      phoneNumber: this.data.phoneNumber
+    })
+      .then(res => {
+        wx.showToast({
+          title: '发送成功',
+          icon: 'success',
+          duration: 2000
+        })
+        this.goGetCode();
+      })
   },
   goGetCode() { //获取短信倒计时
     var that = this;
@@ -60,30 +79,36 @@ Page({
       }
     }, 1000)
   },
-  getSMS() {
-    wxRequest.getRequest('api/user/sendFindTxPWSMS.do', {
-        phoneNumber: this.data.phoneNumber
-      })
-      .then(res => {
-        wx.showToast({
-          title: '发送成功',
-          icon: 'success',
-          duration: 2000
-        })
-      })
-  },
+ 
   findTXPassword() {
-    wxRequest.getRequest('api/user/findTXPassword.do', {
-        token: app.globalData.token,
-        phoneNumber: this.data.phoneNumber,
-        validateCode: this.data.validateCode,
-        withdrawPW: this.data.withdrawPW
+    if (!this.data.phoneNumber) {
+      wx.showToast({
+        icon: 'none',
+        title: '请输入手机号',
       })
-      .then(res => {
-        wx.redirectTo({
-          url: '/pages/wallet/wallet/wallet'
+    } else if (!this.data.validateCode) {
+      wx.showToast({
+        icon: 'none',
+        title: '请输入验证码',
+      })
+    } else if (!this.data.withdrawPW) {
+      wx.showToast({
+        icon: 'none',
+        title: '请输入新密码',
+      })
+    } else {
+      wxRequest.getRequest('api/user/findTXPassword.do', {
+          token: app.globalData.token,
+          phoneNumber: this.data.phoneNumber,
+          validateCode: this.data.validateCode,
+          withdrawPW: this.data.withdrawPW
         })
-      })
+        .then(res => {
+          wx.redirectTo({
+            url: '/pages/wallet/wallet/wallet'
+          })
+        })
+    }
   },
 
   /**

@@ -7,7 +7,6 @@ view, navigator, button, input, textarea {
   -moz-box-sizing: border-box;
 }
 
-
 input, text {
   color: #333;
 }
@@ -24,18 +23,6 @@ radio {
   margin-right: 20rpx;
 }
 
-.wrap {
-  position: relative;
-  margin: 0 auto;
-  width: 726rpx;
-  background: #fff;
-  border-radius: 10rpx;
-}
-
-.margin-wrap {
-  margin-top: 16rpx;
-}
-
 .padding-wrap {
   padding-bottom: 116rpx;
 }
@@ -50,6 +37,11 @@ radio {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
+}
+.flex-center {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .flex-between {
@@ -74,6 +66,12 @@ radio {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .align-center {

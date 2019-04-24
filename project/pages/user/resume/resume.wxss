@@ -35,7 +35,7 @@
 
 .user-content {
   padding: 16rpx 40rpx 16rpx;
-  border-bottom: 1px solid #dbedff;
+  border-bottom: 1px solid #eee;
 }
 
 .user-content {
@@ -49,9 +49,11 @@
 
 .job-intent {
   margin-right: 16rpx;
-  padding: 0 10rpx;
-  line-height: 42rpx;
-  font-size: 24rpx;
+  width: 90rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  text-align: center;
+  font-size: 22rpx;
   color: #37d3cb;
   border: 1px solid #37d3cb;
   border-radius: 30rpx;

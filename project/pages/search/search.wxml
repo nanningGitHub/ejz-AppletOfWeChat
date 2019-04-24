@@ -3,7 +3,7 @@
 <view class='search_box'>
   <view class='search_left'>
     <image class='search_icon' src='../../images/search_icon.png'></image>
-    <input type='text' bindinput="bindKeyInput" class='input_box'></input>
+    <input type='text' value='{{searchkey}}' placeholder='请输入搜索信息' placeholder-class='input_box_placeholde' bindinput="bindKeyInput" class='input_box'></input>
   </view>
   <text class='cancel' bindtap='Cancel'>确认</text>
 </view>
@@ -12,6 +12,15 @@
     猜你想要
   </view>
   <view class='guess_search_box'>
-    <view class='guess_search_item' wx:for="{{hotWords}}" bindtap='HotWord' data-item='{{item}}'>{{item}}</view>
+    <view class='guess_search_item' wx:for="{{hotWords}}" wx:key="{{index}}" bindtap='HotWord' data-item='{{item}}'>{{item}}</view>
+  </view>
+</view>
+<view class='history guess_search'>
+  <view class='history_title flex-between align-center'>
+    <text class='history_title_text'>历史搜索</text>
+    <image src='/images/search/delete_icon.png' class='delete_icon' bindtap='deleteHistory'></image>
+  </view>
+  <view class='history_conter flex-start'>
+    <view class='historyItem' wx:for='{{historyList}}' wx:key='{{index}}' bindtap='HotWord' data-item='{{item}}'>{{item}}</view>
   </view>
 </view>

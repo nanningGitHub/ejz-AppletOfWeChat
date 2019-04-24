@@ -118,8 +118,15 @@ page {
   color: #37d3cb;
 }
 
+.tishi {
+  margin-top: 14rpx;
+  font-size: 24rpx;
+  color: #37d3cb;
+  text-align: center;
+}
+
 .button {
-  margin: 84rpx auto 0rpx;
+  margin: 60rpx auto 0rpx;
   width: 634rpx;
   height: 98rpx;
   background-color: #37d3cb;
@@ -128,7 +135,8 @@ page {
   justify-content: center;
   align-items: center;
 }
-.button text{
+
+.button text {
   font-size: 30rpx;
   color: #fefefe;
 }

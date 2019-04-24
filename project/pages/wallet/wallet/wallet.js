@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    displayMoney: 0
+    displayMoney: 0,
+    token: app.globalData.token,
   },
 
   intoDetail() {
@@ -38,7 +39,7 @@ Page({
   ishaveTxPw() {
     // 需要当code为1时，进行逻辑判断
     wx.request({
-      url: 'http://localtestapi.ejzhi.com/api/user/ishaveTxPw.do',
+      url: wxRequest.openUrl+'api/user/ishaveTxPw.do',
       data: {
         token: app.globalData.token,
       },

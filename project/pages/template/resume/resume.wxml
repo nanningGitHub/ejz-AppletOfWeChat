@@ -32,13 +32,13 @@
             </view>
           </view>
         </view>
-        <view class="flex-start">
+        <!-- <view class="flex-start">
           <view class="life-photo-area" wx:for="{{userResume.userLifePicture}}" wx:key="{{item}}">
             <view data-index="{{index}}" bindtap="previewImg">
               <image src="{{item}}"></image>
             </view>
           </view>
-        </view>
+        </view> -->
       </view>
       <view class="margin-wrap">
         <view class="wrap">
@@ -77,7 +77,7 @@
             </view>
             <view class="flex-start">
               <text class="user-content-title">期望地区：</text>
-              <text>{{userResume.address.province + ' ' + userResume.address.city + ' ' + userResume.address.area}}</text>
+              <text>{{userResume.address.province||''}}   {{userResume.address.city||''}}  {{userResume.address.area||''}}</text>
             </view>
           </view>
         </view>
@@ -90,7 +90,7 @@
           </view>
         </view>
       </view>
-      <view class="margin-wrap">
+      <view class="margin-wrap" wx:if='{{userResume.experience}}'>
         <view class="wrap">
           <template is="resumeTitle" data="{{name:'工作经验',icon:'../../../images/experience.png'}}" />
           <view class="user-content">

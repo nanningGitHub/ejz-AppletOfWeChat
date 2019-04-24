@@ -1,0 +1,14 @@
+<!--components/deliverItem/deliverItem.wxml-->
+<view class='item flex-between align-center'>
+  <view class='flex-1'>
+    <text class='title'>{{item.solrJobOffline.title}}</text>
+    <text class='start_time'>开始时间：{{item.solrJobOffline.startDate}}</text>
+  </view>
+  <view class='fl'>
+    <view class='flex-start align-baseline'>
+      <text class='price'>{{item.solrJobOffline.salary}}</text>
+      <text class='date'>RMB/{{item.solrJobOffline.salaryUnitStr}}</text>
+    </view>
+    <text class='methods'>{{item.dealStatusStr}}</text>
+  </view>
+</view>

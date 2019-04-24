@@ -1,0 +1,8 @@
+<!--pages/user/collect/collect.wxml-->
+<view wx:if="{{userFavoriteJob.length}}">
+  <job-item wx:for="{{userFavoriteJob}}" wx:key="{{item.id}}" bindtap="toJobDetail" item='{{item.jobofflinInfo}}' data-JobOfflineId='{{item.jobofflinInfo.id}}'></job-item>
+</view>
+<view class="no-data" wx:else>
+  <image src="../../../images/background_nodata.png"></image>
+  <text>暂无记录</text>
+</view>

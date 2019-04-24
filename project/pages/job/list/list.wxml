@@ -1,5 +1,5 @@
 <view class='screen'>
-  <ul class="select-content">
+  <ul class="select-content" catchtouchmove="move">
     <li bindtap="selectSort" data-flag='flagJob' class="{{ flagJob == true ? 'select' : '' }}">
       全部岗位
       <span></span>
@@ -16,27 +16,27 @@
   <!-- 筛选条件开始 -->
   <view class='job' wx:if='{{ flagJob==true }}'>
     <ul class='all-job'>
-      <li class='{{item.flag?"select":""}}' wx:for='{{dataMap.jobTypeList}}' bindtap='JobTypeParent' data-value='{{item.value}}' data-childrenList='{{item.childrenList}}'>
+      <li class='{{item.flag?"select":""}}' wx:for='{{dataMap.jobTypeList}}' wx:key='{{item.id}}' bindtap='JobTypeParent' data-value='{{item.value}}' data-childrenList='{{item.childrenList}}'>
         {{item.key}}
       </li>
     </ul>
-    <ul class='detail'>
-      <li class='{{item.flag?"select":""}}' wx:for='{{childrenList}}' data-value='{{item.value}}' bindtap='JobTypeChildren'>
+    <ul class='detail' catchtouchmove="move">
+      <li class='{{item.flag?"select":""}}' wx:for='{{childrenList}}' wx:key='{{item.id}}' data-value='{{item.value}}' bindtap='JobTypeChildren'>
         {{item.key}}
       </li>
     </ul>
   </view>
-  <view class='sort' wx:if='{{ flagSort==true }}'>
+  <view class='sort' catchtouchmove="move" wx:if='{{ flagSort==true }}'>
     <ul>
-      <li wx:for='{{dataMap.sortTypeList}}' bindtap='SortTypeList' data-value='{{item.value}}'>
+      <li wx:for='{{dataMap.sortTypeList}}' wx:key='{{item.id}}' bindtap='SortTypeList' data-value='{{item.value}}'>
         <a class='{{ item.flag?"select":""}}'>{{item.key}}</a>
       </li>
     </ul>
   </view>
-  <view class='filter' wx:if='{{ flagFilter==true }}'>
+  <view class='filter' catchtouchmove="move" wx:if='{{ flagFilter==true }}'>
     <h3>工作区域</h3>
     <ul>
-      <li wx:for='{{dataMap.cityList}}' bindtap='CityList' data-value='{{item.value}}'>
+      <li wx:for='{{dataMap.cityList}}' wx:key='{{index}}' bindtap='CityList' data-value='{{item.value}}'>
         <a class='{{item.flag?"select":""}}'>{{item.key}}
           <span style='display:none;' class='{{item.flag?"select":""}}'></span>
         </a>
@@ -44,7 +44,7 @@
     </ul>
     <h3 style='margin-top: 40rpx;display: block;'>结算方式</h3>
     <ul>
-      <li wx:for='{{dataMap.settlementList}}' bindtap='SettlementList' data-value='{{item.value}}'>
+      <li wx:for='{{dataMap.settlementList}}' wx:key='{{index}}' bindtap='SettlementList' data-value='{{item.value}}'>
         <a class='{{item.flag?"select":""}}'>{{item.key}}
           <span style='display:none;' class='{{item.flag?"select":""}}'></span>
         </a>
@@ -80,14 +80,18 @@
   <!-- 筛选条件结束 -->
 </view>
 <!-- 遮罩层开始 -->
-<view wx:if="{{flagJob||flagSort||flagFilter}}" class="shade">
+<view wx:if="{{flagJob||flagSort||flagFilter}}" class="shade" catchtouchmove="move" bindtap='closeSelect'>
 </view>
 <!-- 遮罩层结束 -->
 
 <!-- joblists开始 -->
-<view class='wrap margin-wrap joblist'>
-  <view wx:for="{{jobOfflinePage.dataList}}" wx:key="{{item.id}}" data-item='{{item}}' bindtap="toJobDetail">
+<view class='margin-wrap joblist' wx:if='{{jobOfflinePage.dataList.length}}'>
+  <view wx:for="{{jobOfflinePage.dataList}}" wx:key="{{item.id}}" data-JobOfflineId='{{item.id}}' bindtap="toJobDetail">
     <job-item item="{{item}}"></job-item>
   </view>
+</view>
+<view class="no-data" wx:else>
+  <image src="../../../images/background_nodata.png"></image>
+  <text>暂无记录</text>
 </view>
 <!-- joblists结束 -->

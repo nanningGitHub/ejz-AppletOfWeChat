@@ -1,13 +1,14 @@
 page {
-  background: #eee;
+  background: #fff;
 }
+
+/* 头部信息开始 */
 
 .title {
   padding: 48rpx;
   width: 100%;
   background: #fff;
-  display: flex;
-  justify-content: flex-start;
+  border-bottom: 1rpx solid #eee;
 }
 
 .portrait {
@@ -31,135 +32,27 @@ page {
   color: #333;
 }
 
-.title .display_b {
-  display: block;
-}
+/* 主体列表开始*/
 
-.remaining {
-  display: none;
-  margin-top: 36rpx;
-  color: #37d3cb;
-  font-size: 34rpx;
-}
-
-.remaining text {
-  display: inline;
-  color: #333;
-  font-size: 20rpx;
-}
-
-.wallet_box {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.wallet {
-  display: none;
-  margin-top: 0rpx;
-  font-size: 24rpx;
-}
-
-.wallet_arrow {
-  display: none;
-  margin-left: 10rpx;
-  height: 14rpx;
-  width: 7rpx;
-  background-size: 100% 100%;
-}
-
-.resume {
-  margin-top: 16rpx;
-  margin-bottom: 16rpx;
-  padding: 28rpx 52rpx 22rpx 34rpx;
-  background: #fff;
-  border-radius: 0.1rem;
-}
-
-.resume .resume-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.resume .resume-content h3 {
-  font-size: 30rpx;
-  font-weight: 600;
-  color: #333;
-}
-
-.resume .resume-content p {
-  margin-top: 20rpx;
-  font-size: 26rpx;
-  line-height: 26rpx;
-  color: #666;
-}
-
-.resume-content navigator {
-  margin-top: 50rpx;
-  display: inline-block;
-  width: 126rpx;
-  font-size: 22rpx;
-  line-height: 34rpx;
-  color: #fff;
-  text-align: center;
-  background: #37d3cb;
-  border-radius: 5rpx;
-}
-
-.progress {
-  padding: 8rpx;
-  width: 146rpx;
-  height: 146rpx;
-  border: 1rpx solid #f5f5f5;
-  border-radius: 50%;
-}
-
-.progress-out {
-  padding: 28rpx;
-  width: 100%;
-  height: 100%;
-  background: #f2f2f2;
-  border-radius: 50%;
-}
-
-.progress-in {
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  border-radius: 50%;
-}
-
-.progress-in text {
-  line-height: 74rpx;
-  font-size: 24rpx;
-  text-align: center;
-  color: #37d3cb;
-}
-
-.resume img {
-  width: 146rpx;
-  height: 146rpx;
-  border: 1rpx solid pink;
-}
-
-.wrap {
-  border-radius: 0rpx;
-}
-
-.delivery {
-  border-top: 2rpx solid #eee;
-  padding: 26rpx 58rpx 26rpx 35rpx;
-  background: #fff;
+.content_item {
+  height: 105rpx;
+  border-bottom: 1rpx solid #eee;
+  padding: 0rpx 40rpx;
   position: relative;
 }
 
-.delivery text {
-  font-size: 30rpx;
-  font-weight: 600;
+.item_icon {
+  width: 26rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.content_item text {
+  font-size: 26rpx;
   color: #333;
 }
 
-.delivery button {
+.content_item .service {
   top: 0;
   left: 0;
   position: absolute;
@@ -169,31 +62,8 @@ page {
 }
 
 .arrow {
-  width: 12rpx;
-  height: 20rpx;
+  width: 14rpx;
+  height: 24rpx;
 }
 
-.delivery ul {
-  padding-left: 12rpx;
-  display: flex;
-  justify-content: space-between;
-}
-
-.delivery ul li {
-  margin-top: 26rpx;
-  display: flex;
-  flex-direction: column;
-}
-
-ul li p {
-  margin-top: 20rpx;
-  font-size: 22rpx;
-  line-height: 22rpx;
-  color: #666;
-}
-
-ul li image {
-  display: inline-block;
-  width: 60rpx;
-  height: 60rpx;
-}
+/* 主体列表结束*/

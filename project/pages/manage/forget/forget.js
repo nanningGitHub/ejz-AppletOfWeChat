@@ -11,14 +11,18 @@ Page({
     disabled: true,
     code: '获取验证码'
   },
-  getMobile: function (e) {
+  getMobile: function(e) {
     this.setData({
       mobile: e.detail.value
     })
   },
   getVerificationCode() {
-    if (this.data.disabled) {
-      this.goGetCode();
+    if (!this.data.mobile) {
+      wx.showToast({
+        icon:'none',
+        title: '请输入手机号',
+      })
+    } else if (this.data.disabled) {
       this.getSMS();
     } else {
 
@@ -31,7 +35,7 @@ Page({
       code: '60秒后重发',
       disabled: false
     })
-    var Interval = setInterval(function () {
+    var Interval = setInterval(function() {
       time--;
       if (time > 0) {
         that.setData({
@@ -46,81 +50,81 @@ Page({
       }
     }, 1000)
   },
-  getSMS: function (e) { //请求验证码接口
+  getSMS: function(e) { //请求验证码接口
     wxRequest.getRequest('api/user/sendFindBackSMS.do', {
-      phoneNumber: this.data.mobile
-    })
+        phoneNumber: this.data.mobile
+      })
       .then(res => {
-        console.log(res)
+        this.goGetCode();
       })
   },
-  register: function (e) {
+  register: function(e) {
     wxRequest.getRequest('api/user/findPassword.do', {
-      phoneNumber: e.detail.value.mobile,
-      password: e.detail.value.password,
-      validateCode: e.detail.value.validate,
-    })
+        phoneNumber: e.detail.value.mobile,
+        password: e.detail.value.password,
+        validateCode: e.detail.value.validate,
+      })
       .then(res => {
         console.log(res)
         wx.reLaunch({
           url: '/pages/manage/login/login',
         })
       })
-      .catch(err => { })
+      .catch(err => {})
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

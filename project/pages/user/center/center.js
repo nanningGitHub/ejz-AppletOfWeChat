@@ -12,17 +12,6 @@ Page(filter.loginCheck({
     this.setData({
       token: app.globalData.token
     })
-    wxRequest.getRequest('api/user/getData.do', {
-        token: app.globalData.token
-      })
-      .then(res => {
-        console.log(res)
-        let resumedataNum = Math.round(res.dataMap.userData.resumedataNum * 100)
-        res.dataMap.userData.resumedataNum = resumedataNum;
-        this.setData({
-          user: res.dataMap.userData
-        })
-      })
   },
   onReady: function(e) {
     // 页面渲染完成
@@ -32,7 +21,18 @@ Page(filter.loginCheck({
     })
   },
   onShow: function() {
-
+    wxRequest.getRequest('api/user/getData.do', {
+        token: app.globalData.token
+      })
+      .then(res => {
+        let resumedataNum = Math.round(res.dataMap.userData.resumedataNum * 100)
+        let wallet = res.dataMap.userData.wallet;
+        res.dataMap.userData.resumedataNum = resumedataNum;
+        res.dataMap.userData.wallet = Math.floor(wallet * 100) / 100;
+        this.setData({
+          user: res.dataMap.userData
+        })
+      })
     // 页面显示
   },
   onHide: function() {
@@ -95,7 +95,12 @@ Page(filter.loginCheck({
   },
   Withdraw() {
     wx.navigateTo({
-      url:'/pages/wallet/wallet/wallet'
+      url: '/pages/wallet/wallet/wallet'
     })
   },
+  IntoCollect() { //进入收藏页面
+    wx.navigateTo({
+      url: '/pages/user/collect/collect'
+    })
+  }
 }))

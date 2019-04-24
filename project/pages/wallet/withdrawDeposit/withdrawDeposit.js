@@ -65,7 +65,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '/pages/wallet/WithdrawalPassword/WithdrawalPassword?txMoney=' + this.data.txMoney + '&bankId=' + this.data.bankId,
+        url: '/pages/wallet/WithdrawPassword/WithdrawPassword?txMoney=' + this.data.txMoney + '&bankId=' + this.data.bankId,
       })
     }
   },

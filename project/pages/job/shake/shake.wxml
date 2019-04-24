@@ -1,4 +1,4 @@
-<import src="../../template/jobList/jobList.wxml" />
+
 <view class="shake-area">
   <view class="center">
     <view class="controll-portrait" bindtap="toggleList">

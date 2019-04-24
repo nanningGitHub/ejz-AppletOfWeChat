@@ -25,6 +25,11 @@ page {
   font-size: 26rpx;
   color: #333;
 }
+picker{
+  line-height: 100rpx;
+  height: 100rpx;
+  width: 420rpx;
+}
 
 .item text {
   width: 200rpx;

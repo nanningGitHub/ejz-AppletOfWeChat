@@ -1,8 +1,5 @@
 <template name="resumeTitle">
   <view class="flex-start resume-title">
-    <view class="resume-title-icon">
-      <image src="{{icon}}"></image>
-    </view>
     <text>{{name}}</text>
   </view>
 </template>

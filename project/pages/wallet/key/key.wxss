@@ -25,6 +25,10 @@ page {
   color: #333;
 }
 
+.item input {
+  width: 334rpx;
+}
+
 .item text {
   width: 200rpx;
   text-indent: 36rpx;

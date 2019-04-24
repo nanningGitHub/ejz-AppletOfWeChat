@@ -15,8 +15,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.1",
-	"appid": "wxce128c6ff2141766",
-	"projectname": "project",
+	"appid": "wx539060c0ef642fce",
+	"projectname": "E%E5%85%BC%E8%81%8C%E6%B1%82%E8%81%8C%E7%89%88",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -65,6 +65,40 @@
 					"name": "获取用户信息页面",
 					"pathName": "pages/manage/userinfo/userinfo",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "申请提现成功",
+					"pathName": "pages/wallet/WithdrawSuccess/WithdrawSuccess",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "岗位详情",
+					"pathName": "pages/job/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收藏页面",
+					"pathName": "pages/user/collect/collect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "岗位页面",
+					"pathName": "pages/job/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "投递记录",
+					"pathName": "pages/user/myJob/myJob",
 					"scene": null
 				}
 			]

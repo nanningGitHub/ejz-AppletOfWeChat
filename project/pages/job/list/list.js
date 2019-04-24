@@ -69,6 +69,13 @@ Page({
       flagFilter: this.data.flagFilter
     })
   },
+  closeSelect() {
+    this.setData({
+      flagJob: false,
+      flagSort: false,
+      flagFilter: false,
+    })
+  },
   userEntry: function() { //进入我要找兼职
     app.login('user', function() {
       wx.navigateTo({
@@ -86,10 +93,8 @@ Page({
   checkOpenId: function(entry) { //判断openId是否绑定
     wx.getStorage({
       key: 'token',
-      success: function(res) {
-      },
-      fail: function() {
-      }
+      success: function(res) {},
+      fail: function() {}
     })
   },
   GetScreen() { //请求筛选条件
@@ -279,7 +284,6 @@ Page({
           item.lastFreshTime = Utils.getLocalTime(item.lastFreshDate)
           item.startWorkTime = Utils.getTime(item.startDate)
           item.endWorkTime = Utils.getTime(item.endDate)
-          item.image = Utils.imgLogo(item.jobSubtypeId)
         })
 
         // jobOfflinePage.dataList = BeforeJobOfflinePage.dataList.concat(jobOfflinePage.dataList)
@@ -294,10 +298,19 @@ Page({
         // this.getIndexList()
       })
   },
-  toJobDetail: function(event) { //
-    let item = event.currentTarget.dataset.item
+
+  // 点击岗位进入详情页 开始
+  toJobDetail: function(event) {
+    let JobOfflineId = event.currentTarget.dataset.jobofflineid;
     wx.navigateTo({
-      url: '/pages/job/detail/detail?jobData=' + JSON.stringify(item)
+      url: '/pages/job/detail/detail?JobOfflineId=' + JobOfflineId + '&cityId=' + app.globalData.cityId
     })
+  },
+  // 点击岗位进入详情页 结束
+
+  // 遮罩成滑动问题开始
+  move() {
+
   }
+  // 遮罩成滑动问题结束
 })

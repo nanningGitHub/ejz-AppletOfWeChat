@@ -23,6 +23,7 @@
   <input type='digit' class='money_input' bindinput='moneyInput' value='{{txMoney}}' placeholder-class="color" placeholder='可提现到卡{{displayMoney}}元'></input>
   <text class='allIn' bindtap='allIn'>全部</text>
 </view>
+<text class='tishi'>温馨提示：提现金额在10到30000元区间内</text>
 <view class='button' bindtap='intoWithdrawalPassword'>
   <text>确认提现</text>
 </view>

@@ -25,7 +25,7 @@ Page({
           })
           .then(res => {
             wx.redirectTo({
-              url: '/pages/wallet/WithdrawalSuccess/WithdrawalSuccess'
+              url: '/pages/wallet/WithdrawSuccess/WithdrawSuccess'
             })
           })
       }

@@ -1,3 +1,6 @@
 {
-    "navigationBarTitleText": "我的兼职"
+  "navigationBarTitleText": "投递记录",
+  "usingComponents": {
+    "deliver-item": "/components/deliverItem/deliverItem"
+  }
 }

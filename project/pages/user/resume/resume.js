@@ -5,21 +5,21 @@ Page({
   data: {
     userResume: {},
   },
-  toEdit: function () {
+  toEdit: function() {
     wx.navigateTo({
       url: '../editResume/editResume?userResume=' + JSON.stringify(this.data.userResume),
     })
   },
-  previewImg: function (e) {
+  previewImg: function(e) {
     wx.previewImage({
       current: this.data.userResume.userLifePicture[parseInt(e.currentTarget.dataset.index)],
       urls: this.data.userResume.userLifePicture
     })
   },
-  showUserResume: function (token) {
+  showUserResume: function(token) {
     wxRequest.postRequest("api/user/showUserResume.do", {
-      token: app.globalData.token
-    })
+        token: app.globalData.token
+      })
       .then(res => {
         let resume = res.dataMap.userResume
         let editResumeInfo = {
@@ -51,7 +51,7 @@ Page({
         })
       })
   },
-  onLoad: function () {
+  onShow: function() {
     this.showUserResume(app.globalData.token)
   }
 })

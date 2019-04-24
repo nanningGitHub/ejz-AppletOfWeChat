@@ -1,27 +1,25 @@
-@import "../../template/jobList/jobList.wxss";
-
 page {
   background: #f2f2f2;
   height: 100%;
 }
 
 .job-nav {
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0 30rpx;
   width: 100%;
-  height: 100rpx;
   background: #fff;
   z-index: 99;
 }
 
 .nav-item {
   display: block;
-  width: 88rpx;
-  height: 100rpx;
-  line-height: 100rpx;
-  font-size: 24rpx;
+  width: 90rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 26rpx;
   color: #bbb;
   text-align: center;
 }
@@ -46,7 +44,7 @@ page {
 .scroll-area {
   position: absolute;
   top: 0;
-  padding-top: 100rpx;
+  padding-top: 76rpx;
   width: 500%;
   height: 100%;
   transition: left ease-in-out 300ms;
@@ -58,25 +56,33 @@ page {
   overflow-y: scroll;
 }
 
+.scrollItem {
+  border-bottom: 1rpx solid #eee;
+}
+
 .first-row text.deal-status {
   font-size: 24rpx;
   color: #37d3cb;
   font-weight: normal;
 }
 
+.margin-wrap .item {
+  border: none;
+}
+
 .controll {
-  height: 88rpx;
-  border-top: 1px solid #dbedff;
+  background-color: #fff;
+  padding: 0 40rpx;
+  height: 60rpx;
 }
 
 .controll-item {
-  width: 210rpx;
-  border-left: 1px solid #dbedff;
+  margin-left: 60rpx;
 }
 
 .controll-item text {
-  font-size: 28rpx;
-  color: #37d3cb;
+  font-size: 24rpx;
+  color: #333;
 }
 
 .deal-price {

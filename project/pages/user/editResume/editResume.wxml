@@ -66,7 +66,7 @@
       </view>
       <view class="flex-start resume-list">
         <template is="resumeList" data="{{isNeed:true,name:'入学年份'}}" />
-        <picker name="startSchool" mode="date" value="{{startSchool}}" start="1930-01-01" end="2018-12-31" fields="year" bindchange="startSchoolChange" class="flex-start align-center">
+        <picker name="startSchool" mode="date" value="{{startSchool}}" start="1960-01-01" end="2018-12-31" fields="year" bindchange="startSchoolChange" class="flex-start align-center">
           <view class="picker">
             <text wx:if="{{!startSchool}}" class="picker-none">请选择入学年份</text>
             <text wx:else class="picker-choosed">{{startSchool}}</text>

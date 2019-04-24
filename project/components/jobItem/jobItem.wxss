@@ -1,24 +1,21 @@
 @import "/app.wxss";
+
 /* components/jobItem/jobItem.wxss */
+
 .item {
-  padding: 0 38rpx; 
-  height: 158rpx;
+  padding: 0 40rpx;
+  height: 162rpx;
   background: #fff;
   border-bottom: 1rpx solid #eee;
 }
-.logo {
-  margin-right: 42rpx;
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
-}
+
 .title {
   line-height: 42rpx;
-  font-size: 26rpx;
-  font-weight: 600;
+  font-size: 28rpx;
 }
+
 .tip {
-  max-width: 260rpx;
+  max-width: 280rpx;
   height: 28rpx;
   overflow: hidden;
   line-height: 28rpx;
@@ -27,26 +24,31 @@
   font-size: 22rpx;
   color: #888;
 }
+
 .icon-address {
   margin-left: 1rpx;
   margin-right: 14rpx;
   width: 15rpx;
   height: 22rpx;
 }
+
 .icon-time {
   margin-right: 12rpx;
   width: 18rpx;
   height: 18rpx;
 }
+
 .price {
   margin-right: 10rpx;
   font-size: 40rpx;
   color: #37d3cb;
 }
+
 .date {
   font-size: 22rpx;
   color: #37d3cb;
 }
+
 .methods {
   float: right;
   margin-top: 10rpx;

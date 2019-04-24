@@ -2,7 +2,7 @@
 
 <view class='content'>
   <image class='' src='../../../images/wallet/hint.png'></image>
-  <text class=''>提现成功</text>
+  <text class=''>申请提现成功</text>
 </view>
 <view class='return' bindtap='returnWallet'>
   <text class=''>返回钱包</text>

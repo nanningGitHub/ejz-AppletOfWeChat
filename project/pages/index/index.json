@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "job-item": "/components/indexItem/jobItem"
+    "job-item": "/components/jobItem/jobItem"
   }
 }

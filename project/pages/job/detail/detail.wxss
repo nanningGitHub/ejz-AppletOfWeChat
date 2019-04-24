@@ -1,73 +1,199 @@
-@import "../../template/jobList/jobList.wxss";
-
 .main-content {
-  padding-bottom: 116rpx;
+  padding-bottom: 98rpx;
 }
 
 .job-content {
-  padding: 16rpx 34rpx 16rpx 30rpx;
+  padding: 0rpx 40rpx;
   line-height: 56rpx;
   font-size: 28rpx;
-  border-bottom: 1px solid #dbedff;
 }
 
-.job-content-bottom {
-  padding-bottom: 40rpx;
+/* 岗位标题开始 */
+
+.job-title {
+  margin-top: 20rpx;
+  padding-left: 40rpx;
+  height: 54rpx;
 }
 
-.content-area {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
+.title_icon {
+  width: 6rpx;
+  height: 28rpx;
+  background-color: #37d3cb;
 }
 
-.address, .content {
-  flex: 1;
-  line-height: 40rpx;
+.job-title text {
+  font-weight: 600;
+  margin-left: 12rpx;
+  font-size: 28rpx;
 }
 
-.address {
-  margin-top: 8rpx;
+/*  岗位标题结束*/
+
+/* 进入地图开始 */
+
+.intoLocation {
+  height: 82rpx;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 0rpx 40rpx;
 }
 
-.footer-left, .footer-right {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+.location_icon {
+  height: 32rpx;
+  width: 25rpx;
+  margin-right: 14rpx;
 }
 
-.footer-left {
-  background: #fff;
-  width: 30%;
+.location_text {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.into_icon {
+  width: 14rpx;
+  height: 24rpx;
+}
+
+/* 进入地图结束 */
+
+/* 发布企业开始 */
+
+.company {
+  padding: 0rpx 0rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.company_content {
+  height: 130rpx;
+  padding: 0rpx 40rpx;
+}
+
+.company_loge {
+  width: 82rpx;
+  height: 82rpx;
+  margin-right: 34rpx;
+  border-radius: 82rpx;
+}
+
+.company_name {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+/* 发布企业结束 */
+
+/* 兼职福利开始 */
+
+.welfare_content {
+  margin-top: 20rpx;
+  padding: 0 40rpx;
+}
+
+.welfare_item {
+  width: 130rpx;
+  height: 40rpx;
+  background-color: #37d3cb;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+.welfare_item_text {
+  color: #fff;
+  font-size: 24rpx;
+}
+
+/* 兼职福利结束 */
+
+/* 已报名同学开始 */
+
+.Willnum {
+  border-bottom: 1rpx solid #eee;
+  height: 60rpx;
+  padding: 0 40rpx;
+}
+
+.Willnum_num {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.Willnum_box {
+  height: 110rpx;
+}
+
+.Willnum_img {
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 70rpx;
+  margin-right: 16rpx;
+}
+
+.Willnum .more {
+  margin-right: 0rpx;
+}
+
+/* 已报名同学结束 */
+
+/* 相关推荐开始 */
+
+.recommend {
+}
+
+/* 相关推荐结束 */
+
+/* 底部模块开始 */
+
+.footer {
+  background-color: #fff;
+  height: 98rpx;
+  box-shadow: 0rpx 0rpx 10rpx 5rpx rgba(85, 85, 85, 0.10);
 }
 
 .contact {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.contact text {
-  font-size: 32rpx;
+  position: relative;
 }
 
 .contact image {
-  width: 36rpx;
-  height: 48rpx;
+  width: 33rpx;
+  height: 33rpx;
   margin-right: 12rpx;
 }
 
-.footer-right {
-  background: #37d3cb;
-  width: 70%;
+.contact image.share_img {
+  width: 27rpx;
+  height: 27rpx;
+  margin-right: 12rpx;
 }
 
-.footer-right-delivered {
+.contact text {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.contact button {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0rpx;
+  left: 0rpx;
+  opacity: 0;
+}
+
+.deliver {
+  background: #37d3cb;
+  height: 100%;
+}
+
+.delivered {
   background: #bbb;
 }
 
-.footer-right text {
+.deliver text {
+  font-size: 30rpx;
   color: #fff;
 }
+
+/* 底部模块结束 */

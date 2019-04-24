@@ -1,0 +1,16 @@
+<!--components/titleItem/titleItem.wxml-->
+<view class='item flex-between align-center'>
+  <view class='flex-1 flex-column-between chunk'>
+    <text class='title'>{{item.title}}</text>
+    <text class='people'>招聘人数{{item.needNumber}}人</text>
+  </view>
+  <view class='fl  flex-column-between chunk'>
+    <view class='flex-start align-baseline'>
+      <text class='price'>{{item.salary}}</text>
+      <text class='date'>RMB/{{item.salaryUnitStr}}</text>
+    </view>
+    <view>
+      <text class='methods'>{{item.settlementTypeStr}}结</text>
+    </view>
+  </view>
+</view>

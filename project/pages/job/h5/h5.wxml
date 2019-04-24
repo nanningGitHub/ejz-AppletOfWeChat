@@ -1,0 +1,2 @@
+<!--pages/job/h5/h5.wxml-->
+<web-view src='{{goUrl}}'></web-view>

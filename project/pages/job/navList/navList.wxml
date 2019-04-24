@@ -1,6 +1,20 @@
 <!--pages/job/navList/navList.wxml-->
-<view class='wrap margin-wrap job-list'>
-  <view wx:for="{{jobList}}" wx:key="{{item.id}}" data-item='{{item}}' bindtap="toJobDetail">
+<view class='wrap margin-wrap job-list' wx:if='{{dataList.length&&goType==4}}'>
+  <view wx:for="{{dataList}}" wx:key="{{item.id}}" data-JobOfflineId='{{item.jobId}}' bindtap="toJobDetail">
+    <job-item item="{{item.jobOffline}}"></job-item>
+  </view>
+</view>
+<view class='wrap margin-wrap job-list' wx:elif='{{dataList.length&&goType==5}}'>
+  <view wx:for="{{dataList}}" wx:key="{{index}}" data-JobOfflineId='{{item.jobId}}' bindtap="toJobDetail">
     <job-item item="{{item}}"></job-item>
   </view>
+</view>
+<view class='wrap margin-wrap job-list' wx:elif='{{dataList.length&&searchkey}}'>
+  <view wx:for="{{dataList}}" wx:key="{{index}}" data-JobOfflineId='{{item.jobId}}' bindtap="toJobDetail">
+    <job-item item="{{item}}"></job-item>
+  </view>
+</view>
+<view class="no-data" wx:else>
+  <image src="../../../images/background_nodata.png"></image>
+  <text>暂无记录</text>
 </view>

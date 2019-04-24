@@ -1,4 +1,4 @@
-@import "../../template/jobList/jobList.wxss";
+
 
 .shake-area {
   position: relative;

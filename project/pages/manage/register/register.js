@@ -17,8 +17,11 @@ Page({
     })
   },
   getVerificationCode() {
-    if (this.data.disabled) {
-      this.goGetCode();
+    if (!this.data.mobile) {
+      wx.showToast({
+        title: '请输入手机号',
+      })
+    } else if (this.data.disabled) {
       this.getSMS();
     } else {
 
@@ -51,7 +54,7 @@ Page({
         phoneNumber: this.data.mobile
       })
       .then(res => {
-        console.log(res)
+        this.goGetCode();
       })
   },
   register: function(e) {

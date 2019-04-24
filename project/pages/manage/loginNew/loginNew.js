@@ -23,21 +23,45 @@ Page({
         .then(res => {
           wx.setStorageSync('token', res.dataMap.token)
           app.globalData.token = res.dataMap.token
-          wx.reLaunch({
-            url: '/pages/index/index',
-          })
+          const rawData = wx.getStorageSync('rawData');
+          if (!rawData){
+            this.getSetting()
+          } else{
+            wx.switchTab({
+              url: '/pages/index/index'
+            })
+          }
         })
         .catch(err => {
           console.log(err)
         })
-    } else {
-      return
     }
+  },
+  getSetting() {
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 必须是在用户已经授权的情况下调用
+          wx.getUserInfo({
+            success(res) {
+              wx.setStorageSync('rawData', res.rawData)
+              wx.switchTab({
+                url: '/pages/index/index'
+              })
+            }
+          })
+        } else {
+          wx.redirectTo({
+            url: '/pages/manage/userinfo/userinfo'
+          })
+        }
+      }
+    })
   },
 
 
   // 进入login页面
-  intologin(){
+  intologin() {
     wx.navigateTo({
       url: '/pages/manage/login/login',
     })

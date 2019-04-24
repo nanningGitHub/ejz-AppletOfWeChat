@@ -1,87 +1,165 @@
-page {
-  background: #eee;
+/* 搜索开始 */
+
+.search_box {
+  background-color: #f2f2f2;
+  height: 94rpx;
 }
-.container {
-  padding-top: 226rpx;
-  padding-bottom: 16rpx;
-  overflow: hidden;
-}
-.banner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 242rpx;
-}
-.search{
-  position: absolute;
-  top: 26rpx;
-  width: 556rpx;
-  height: 54rpx;
-  border-radius: 10rpx;
-  background-color: #ffffff;
-  opacity: 0.7;
-  left: 50%;
-  margin-left: -278rpx;
+
+.search {
+  height: 70rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-} 
-.banner .search_icon{
+  width: 718rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin: auto;
+}
+
+.search_icon {
   width: 20rpx;
   height: 20rpx;
   background-size: 100% 100%;
 }
-.search_text{
+
+.search_text {
   font-size: 22rpx;
-  color: #aaaaaa;
+  color: #aaa;
   margin-left: 12rpx;
 }
+
+/* 搜索结束 */
+
+/* banner开始 */
+
+.banner {
+  width: 100%;
+  height: 346rpx;
+}
+
 .banner image {
   width: 100%;
   height: 100%;
 }
-.nav {
-  padding: 40rpx 58rpx 36rpx;
-  border-bottom: 1rpx solid #eee;
+
+/* banner结束 */
+
+/* 导航开始 */
+
+.scrollBox {
+  display: inline;
 }
+
+.nav-item {
+  flex: 1;
+  height: 190rpx;
+}
+
 .nav-item image {
   width: 80rpx;
   height: 80rpx;
 }
+
 .nav-item text {
   margin-top: 14rpx;
   font-size: 24rpx;
 }
-.message {
-  padding-left: 208rpx;
+
+/* 导航结束  */
+
+/* 导航的滑动线开始 */
+
+.navLine {
+  height: 8rpx;
+  width: 100%;
 }
-.message image {
-  width: 23rpx;
-  height: 20rpx;
+
+.navLineBox {
+  position: relative;
+  height: 8rpx;
+  border-radius: 8rpx;
+  background-color: #f2f2f2;
 }
-.message-list {
-  margin-left: 18rpx;
-  flex: 1;
-  height: 62rpx;
+
+.navLineBoxItem {
+  transition: left 0.5s;
+  position: absolute;
+  top: 0rpx;
+  height: 8rpx;
+  border-radius: 8rpx;
+  background-color: #37d3cb;
 }
-.message-list text {
-  font-size: 20rpx;
-  color: #aaa;
-}
-.job {
-  margin-top: 16rpx;
-}
+
+/* 导航的滑动线结束 */
+
+/* 岗位模块开始 */
+
+/* 岗位标题开始 */
+
 .job-title {
-  padding-left: 24rpx;
-  height: 62rpx;
-  border-bottom: 1rpx solid #eee;
+  padding-left: 40rpx;
+  height: 54rpx;
 }
-.job-title image {
-  width: 25rpx;
-  height: 25rpx;
+
+.title_icon {
+  width: 6rpx;
+  height: 26rpx;
+  background-color: #37d3cb;
 }
+
 .job-title text {
-  margin-left: 10rpx;
-  font-size: 26rpx;
+  font-weight: 600;
+  margin-left: 12rpx;
+  font-size: 28rpx;
 }
+
+/*  岗位标题结束*/
+
+/* 岗位banner开始 */
+
+.jobBanner {
+  height: 224rpx;
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+
+.jobBanner__img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 岗位banner结束 */
+
+/* 岗位模结束 */
+
+/* 主体岗位开始 */
+
+.content {
+  width: 100%;
+}
+
+/* 主体岗位结束 */
+
+/* 组件开始 */
+
+.scroll-view-item_H {
+  display: inline;
+}
+
+#green {
+  background-color: green;
+}
+
+#red {
+  background-color: red;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#blue {
+  background-color: blue;
+}
+
+/* 组件结束 */

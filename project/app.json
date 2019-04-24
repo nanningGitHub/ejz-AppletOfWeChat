@@ -4,6 +4,7 @@
     "pages/manage/login/login",
     "pages/manage/register/register",
     "pages/manage/forget/forget",
+    "pages/job/h5/h5",
     "pages/job/list/list",
     "pages/job/detail/detail",
     "pages/job/deliverSuccess/deliverSuccess",
@@ -11,8 +12,8 @@
     "pages/user/center/center",
     "pages/user/resume/resume",
     "pages/user/editResume/editResume",
-    "pages/user/lifePhoto/lifePhoto",
     "pages/user/myJob/myJob",
+    "pages/user/collect/collect",
     "pages/user/myJobDetail/myJobDetail",
     "pages/user/deliver/deliver",
     "pages/job/navList/navList",
@@ -49,7 +50,9 @@
   "tabBar": {
     "color": "#888",
     "selectedColor": "#333",
-    "borderStyle": "white",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
     "list": [
       {
         "pagePath": "pages/index/index",

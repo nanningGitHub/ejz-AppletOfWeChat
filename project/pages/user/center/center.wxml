@@ -5,45 +5,51 @@
     </view>
     <view>
       <text class='name'>{{user.userName||rawData.nickName}}</text>
-      <text class="remaining {{token?'display_b':''}}">{{user.wallet}} <text>元</text></text>
-      <view class='wallet_box' bindtap='Withdraw'>
-        <text class="wallet {{token?'display_b':''}}">钱包提现</text>
-        <image class="wallet_arrow {{token?'display_b':''}}" src='/images/arrow_3.png'></image>
-      </view>
     </view>
   </view>
-  <view class="wrap resume flex-between" bindtap='myResume'>
-    <view class="resume-content">
-      <h3>我的简历</h3>
-      <p>完善简历能提升您的录取率哦！</p>
-      <view class='nResume' bindtap='myResume'>{{user.resumedataNum && '立即完善' || '填写简历'}}</view>
-    </view>
-    <view class='progress'>
-      <view class='progress-out' style=' position: relative;'>
-        <view class='progress-in'>
-          <text>{{user.resumedataNum && user.resumedataNum || 0}}%</text>
-        </view>
+  <view class='content_list'>
+    <view class="content_item flex-between align-center" bindtap='myResume'>
+      <view class='flex-start align-center'>
+        <image class='item_icon' src='/images/my/resume_icon.png'></image>
+        <text>我的简历</text>
       </view>
-    </view>
-  </view>
-  <view class="wrap delivery">
-    <view class='flex-between align-center' bindtap='myJob'>
-      <text>我的投递</text>
       <image class='arrow' src='/images/arrow_3.png' />
     </view>
-  </view>
-  <view class="wrap delivery">
-    <view class='flex-between align-center'>
+    <view class="content_item flex-between align-center" bindtap='myJob'>
+      <view class='flex-start align-center'>
+        <image class='item_icon' src='/images/my/deliver_icon.png'></image>
+        <text>投递记录</text>
+      </view>
+      <image class='arrow' src='/images/arrow_3.png' />
+    </view>
+    <view class=" content_item flex-between align-center" bindtap='Withdraw'>
+      <view class='flex-start align-center'>
+        <image class='item_icon' src='/images/my/wallet_icon.png'></image>
+        <text>钱包</text>
+      </view>
+      <image class='arrow' src='/images/arrow_3.png' />
+    </view>
+    <view class="content_item flex-between align-center" bindtap='IntoCollect'>
+      <view class='flex-start align-center'>
+        <image class='item_icon' src='/images/my/collect_icon.png'></image>
+        <text>收藏</text>
+      </view>
+      <image class='arrow' src='/images/arrow_3.png' />
+    </view>
+    <view class="content_item flex-between align-center">
+      <view class='flex-start align-center'>
+        <image class='item_icon' src='/images/my/service_icon.png'></image>
+        <text>联系客服</text>
+      </view>
+      <image class='arrow' src='/images/arrow_3.png' />
       <button show-message-card='true' open-type="contact" class='service'>联系客服</button>
-      <text>联系客服</text>
-      <image class='arrow' src='/images/arrow_3.png' />
     </view>
   </view>
-  <view class="wrap delivery">
-    <view class='flex-between align-center' bindtap='quit'>
-      <text>退出登陆</text>
-      <image class='arrow' src='/images/arrow_3.png' />
+  <view class="content_item flex-between align-center" bindtap='quit'>
+    <view class='flex-start align-center'>
+      <image class='item_icon' src='/images/my/quit_icon.png'></image>
+      <text>退出登录</text>
     </view>
+    <image class='arrow' src='/images/arrow_3.png' />
   </view>
-
 </view>

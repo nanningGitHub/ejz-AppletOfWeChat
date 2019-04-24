@@ -1,22 +1,19 @@
-<import src="../../template/jobList/jobList.wxml" />
 <view class="main-content">
   <view class="margin-wrap">
-    <job-item item="{{item}}" />
+    <title-item item="{{item}}" />
   </view>
   <view class="margin-wrap">
     <view class="wrap">
+      <view class='job-title flex-start align-center'>
+        <view class='title_icon'></view>
+        <text>兼职描述</text>
+      </view>
       <view class="job-content">
         <text>兼职类型：{{item.jobTypeStr}}</text>
-        <text>招聘人数：{{item.needNumber}}</text>
+        <text>招聘人数：{{item.needNumber}}人</text>
         <text>性别要求：{{item.gender}}</text>
-      </view>
-      <view class="job-content job-content-bottom">
-        <text>工作日期：{{item.startTime}} 至 {{item.endTime}}</text>
         <text>工作时段：{{item.startWorkTime}} 至 {{item.endWorkTime}}</text>
-        <view class="content-area">
-          <text>工作地点：</text>
-          <text class="address">{{item.address}}</text>
-        </view>
+        <text>工作日期：{{item.startTime}} 至 {{item.endTime}}</text>
       </view>
     </view>
   </view>
@@ -28,18 +25,107 @@
       </view>
     </view>
   </view>
-</view>
-<view class="footer">
-  <button class="footer-left" data-mobile="{{item.mobile}}" open-type="share">
-    <view class="contact" >
-      <image src="../../../images/share_icon.png"></image>
-      <text>分享</text>
+
+  <!-- 进入地图开始 -->
+  <view class='intoLocation flex-between align-center' bindtap='OpenLocation'>
+    <view class='flex-start align-center'>
+      <image class='location_icon' src='/images/jobdetail/location_icon.png'></image>
+      <text class='location_text'>{{item.address}}</text>
     </view>
-  </button>
-  <view class="footer-right" bindtap="deliverResume" wx:if="{{!isdeliver}}">
-    <text>投递简历</text>
+    <view>
+      <image class='into_icon' src='/images/jobdetail/into_icon.png'></image>
+    </view>
   </view>
-  <view class="footer-right footer-right-delivered" wx:else>
-    <text>已投递</text>
+  <!-- 进入地图结束 -->
+
+  <!-- 发布企业开始 -->
+  <view class='company'>
+    <view class='job-title flex-start align-center'>
+      <view class='title_icon'></view>
+      <text>发布企业</text>
+    </view>
+    <view class='company_content flex-start align-center'>
+      <image class='company_loge' src='{{enterprise.logoUrl||"/images/jobdetail/company_icon.png"}}'></image>
+      <text class='company_name'>{{enterprise.name}}</text>
+      <!-- <text class='company_type'></text> -->
+    </view>
+  </view>
+  <!-- 发布企业结束 -->
+
+  <!-- 兼职福利开始 -->
+  <view class='welfare' hidden='{{!item.baoChi&&!item.baoZhu&&!item.baoXian&&!item.zhengMing}}'>
+    <view class='job-title flex-start align-center'>
+      <view class='title_icon'></view>
+      <text>兼职福利</text>
+    </view>
+    <view class='welfare_content flex-start align-center'>
+      <view class='welfare_item align-center  flex-center' hidden='{{!item.baoChi}}'>
+        <text class='welfare_item_text'>包吃</text>
+      </view>
+      <view class='welfare_item align-center  flex-center' hidden='{{!item.baoZhu}}'>
+        <text class='welfare_item_text'>包住</text>
+      </view>
+      <view class='welfare_item align-center  flex-center' hidden='{{!item.baoXian}}'>
+        <text class='welfare_item_text'>有保险</text>
+      </view>
+      <view class='welfare_item align-center  flex-center' hidden='{{!item.zhengMing}}'>
+        <text class='welfare_item_text'>实习证明</text>
+      </view>
+    </view>
+  </view>
+  <!-- 兼职福利结束 -->
+
+
+  <!-- 已报名同学开始 -->
+  <view class='Willnum flex-start align-center'>
+    <text class='Willnum_num'>已报名同学{{item.deliverTimes}}人</text>
+
+    <!--报名的同学取消投递仍有记录———》》所以注释 -->
+    <!-- <view class='Willnum_box flex-start align-center'>
+      <image class='Willnum_img' src='{{item.headerFileUrl}}' wx:for='{{enroll}}' wx:key='{{item.id}}'></image>
+      <image class='Willnum_img more' src='/images/jobdetail/more_icon.png'></image>
+    </view> -->
+  </view>
+  <!-- 已报名同性结束 -->
+
+  <!-- 相关推荐开始 -->
+  <view class='recommend'>
+    <view class='job-title flex-start align-center'>
+      <view class='title_icon'></view>
+      <text>相关推荐</text>
+    </view>
+    <view class='recommend_content'>
+      <view wx:for="{{recommentList}}" wx:key="{{item.id}}" data-item='{{item}}' bindtap="RenderJobDetail">
+        <job-item item="{{item}}"></job-item>
+      </view>
+    </view>
+  </view>
+  <!-- 相关推荐结束 -->
+</view>
+
+
+
+<!-- 底部开始 -->
+<view class="footer flex-between">
+  <view class='flex-1 flex-between'>
+    <!-- 分享开始 -->
+    <view class="flex-1 flex-center align-center contact">
+      <image class='share_img' src="/images/jobdetail/share_icon.png"></image>
+      <text>分享</text>
+      <button class="shareBtn" open-type="share"></button>
+    </view>
+    <!-- 分享结束 -->
+
+    <!-- 收藏开始 -->
+    <view class='flex-1 flex-center align-center contact' bindtap="FavoriteJob">
+      <image src="{{status==1?'/images/jobdetail/collected_icon.png':'/images/jobdetail/collect_icon.png'}}"></image>
+      <text>收藏</text>
+    </view>
+    <!-- 收藏结束 -->
+  </view>
+
+  <view class="flex-1 flex-center align-center deliver {{isdeliver?'delivered':''}}" bindtap="deliverResume">
+    <text>{{isdeliver?'完成报名':'立即报名'}}</text>
   </view>
 </view>
+<!-- 底部结束 -->
