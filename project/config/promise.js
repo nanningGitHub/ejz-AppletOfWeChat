@@ -1,6 +1,4 @@
 const Promise = require("../plugins/es6-promise.js")
-// const openUrl = "https://openapi.ejzhi.com/"      //线上地址
-const openUrl = "http://localtestapi.ejzhi.com/" //测试地址
 // const openUrl = "http://192.168.0.107:8081/" //后台地址
 // const app = getApp()
 
